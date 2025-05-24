@@ -137,3 +137,26 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Bird wing flapping animation */
+@keyframes wing-flap {
+  0% {
+    transform: rotateX(0deg) scaleY(1);
+  }
+  25% {
+    transform: rotateX(-20deg) scaleY(0.8);
+  }
+  50% {
+    transform: rotateX(-40deg) scaleY(0.6);
+  }
+  75% {
+    transform: rotateX(-20deg) scaleY(0.8);
+  }
+  100% {
+    transform: rotateX(0deg) scaleY(1);
+  }
+}
+
+.animate-wing-flap {
+  animation: wing-flap 0.3s ease-in-out infinite;
+}
