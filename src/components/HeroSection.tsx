@@ -29,7 +29,7 @@ const HeroSection = () => {
         ref={mapRef}
         className="absolute inset-0 transition-transform duration-100 ease-out"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80")',
+          backgroundImage: 'url("/lovable-uploads/8fdcf32a-dee5-4487-940e-dc3690b8193b.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

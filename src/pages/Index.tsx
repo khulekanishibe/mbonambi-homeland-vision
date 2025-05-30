@@ -9,12 +9,12 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      {/* Mining operation background image */}
+      {/* Local landscape background image */}
       <div className="fixed inset-0 -z-10">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/lovable-uploads/3efdb206-c0ec-4154-b473-b35153497292.png")'
+            backgroundImage: 'url("/lovable-uploads/09d14928-202d-4d23-8b8a-610a24803a10.png")'
           }}
         />
         {/* Overlay for better text readability */}
