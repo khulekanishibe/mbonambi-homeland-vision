@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 
 # Import database and routes
-from .database import create_indexes
+from database import create_indexes
 from backend.routes.auth_routes import router as auth_router
 from backend.routes.events_routes import router as events_router
 from backend.routes.news_routes import router as news_router
