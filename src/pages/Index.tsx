@@ -14,14 +14,17 @@ const Index = () => {
       {/* Background slideshow */}
       <BackgroundSlideshow />
       
-      {/* Scroll-triggered images */}
+      {/* Scroll-triggered images that overlap content */}
       <ScrollTriggeredImages />
       
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <AnnouncementsSection />
-      <Footer />
+      {/* Main content with proper z-index layering */}
+      <div className="relative z-40">
+        <Navigation />
+        <HeroSection />
+        <AboutSection />
+        <AnnouncementsSection />
+        <Footer />
+      </div>
     </div>
   );
 };
