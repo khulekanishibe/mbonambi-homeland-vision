@@ -50,8 +50,8 @@ async def register_user(user: UserCreate):
     user_dict["hashed_password"] = hashed_password
     user_dict["role"] = role
     
-    from models import User as UserModel
-    new_user = UserModel(**user_dict)
+    from models import UserInDB
+    new_user = UserInDB(**user_dict)
     
     await users_collection.insert_one(new_user.dict())
     
