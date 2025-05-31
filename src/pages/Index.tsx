@@ -17,12 +17,21 @@ const Index = () => {
       {/* Scroll-triggered images that overlap content */}
       <ScrollTriggeredImages />
       
-      {/* Main content with proper z-index layering */}
+      {/* Main content with proper z-index layering and spacing for image overlays */}
       <div className="relative z-40">
         <Navigation />
         <HeroSection />
-        <AboutSection />
-        <AnnouncementsSection />
+        
+        {/* About section with extra padding to accommodate overlapping images */}
+        <div className="py-16 md:py-24 px-8 md:px-16">
+          <AboutSection />
+        </div>
+        
+        {/* Announcements section with spacing for image overlays */}
+        <div className="py-16 md:py-24 px-8 md:px-16">
+          <AnnouncementsSection />
+        </div>
+        
         <Footer />
       </div>
     </div>
