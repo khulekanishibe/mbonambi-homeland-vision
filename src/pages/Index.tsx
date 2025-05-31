@@ -23,16 +23,21 @@ const Index = () => {
         <HeroSection />
         
         {/* About section with extra padding to accommodate overlapping images */}
-        <div className="py-16 md:py-24 px-8 md:px-16">
+        <div className="py-20 md:py-32 px-8 md:px-16" id="about">
           <AboutSection />
         </div>
         
         {/* Announcements section with spacing for image overlays */}
-        <div className="py-16 md:py-24 px-8 md:px-16">
+        <div className="py-20 md:py-32 px-8 md:px-16" id="news">
           <AnnouncementsSection />
         </div>
         
-        <Footer />
+        {/* Additional spacing for scroll effects */}
+        <div className="py-20 md:py-32"></div>
+        
+        <div id="contact">
+          <Footer />
+        </div>
       </div>
     </div>
   );
