@@ -117,7 +117,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[120vh] left-6 w-72 h-48 md:left-12 md:w-80 md:h-56">
         <ScrollTriggeredImage
           src="/lovable-uploads/db7d8c40-6568-4ddb-8649-687bea3a6327.png"
-          alt="Community meeting - leadership discussing partnership agreements"
+          alt="Trust leadership meeting - discussing community development initiatives"
           direction="left"
           fadeOutThreshold={0.7}
         />
@@ -126,7 +126,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[140vh] right-6 w-68 h-44 md:right-12 md:w-76 md:h-52">
         <ScrollTriggeredImage
           src="/lovable-uploads/9ed24b4c-5c9d-49cb-a15f-d7b31a96b03c.png"
-          alt="Partnership ceremony - formal cheque handover event"
+          alt="Community benefit distribution - formal handover ceremony"
           direction="right"
           fadeOutThreshold={0.6}
         />
@@ -136,7 +136,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[160vh] left-1/2 transform -translate-x-1/2 w-56 h-40 md:w-72 md:h-48">
         <ScrollTriggeredImage
           src="/lovable-uploads/00378684-e3c1-470a-bc30-7f191cdf3818.png"
-          alt="Leadership speaking at community gathering"
+          alt="Administrator Martin Mbuyazi addressing community stakeholders"
           direction="up"
           fadeOutThreshold={0.75}
         />
@@ -146,7 +146,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[200vh] left-8 w-64 h-42 md:left-16 md:w-80 md:h-54">
         <ScrollTriggeredImage
           src="/lovable-uploads/60a08da7-972e-4ea4-b5ad-020e0a6d4330.png"
-          alt="Community gathering for project announcements"
+          alt="Community development project meeting in KwaMbonambi"
           direction="left"
           fadeOutThreshold={0.65}
         />
@@ -155,7 +155,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[220vh] right-8 w-60 h-38 md:right-16 md:w-72 md:h-46">
         <ScrollTriggeredImage
           src="/lovable-uploads/12072462-ddbf-4a15-a550-5c459a8e56a9.png"
-          alt="Government partnership meeting"
+          alt="RBM partnership meeting - B-BBEE transaction discussions"
           direction="right"
           fadeOutThreshold={0.8}
         />
@@ -165,7 +165,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[250vh] left-10 w-68 h-46 md:left-20 md:w-84 md:h-58">
         <ScrollTriggeredImage
           src="/lovable-uploads/86f44801-d1ec-4831-b394-72d7f4bf9e07.png"
-          alt="Community leader addressing stakeholders"
+          alt="Trust governance meeting - ensuring transparent community benefit distribution"
           direction="up"
           fadeOutThreshold={0.7}
         />
@@ -174,7 +174,7 @@ const ScrollTriggeredImages = () => {
       <div className="absolute top-[280vh] right-6 w-72 h-50 md:right-12 md:w-88 md:h-62">
         <ScrollTriggeredImage
           src="/lovable-uploads/0b4da62b-6b0c-4735-965d-85fbbcff1cd5.png"
-          alt="Community members during formal meeting"
+          alt="Community members during Trust benefit consultation meeting"
           direction="down"
           fadeOutThreshold={0.6}
         />

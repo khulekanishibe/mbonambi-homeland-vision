@@ -6,23 +6,23 @@ const AboutSection = () => {
   const features = [
     {
       icon: Shield,
-      title: 'Land Rights Protection',
-      description: 'Safeguarding community land rights and traditional territories under the Ingonyama Trust in the King Cetshwayo District.'
+      title: 'Community Empowerment',
+      description: 'Managing and distributing community benefits derived from RBM\'s operations to uplift the Mbonambi community through transparent governance.'
     },
     {
       icon: Building2,
-      title: 'Mining Partnership',
-      description: 'Managing the R74.5 million trust fund from our partnership with Richards Bay Minerals (RBM) for community benefit.'
+      title: 'B-BBEE Partnership',
+      description: 'Established in 2009 as part of Richards Bay Minerals\' Broad-Based Black Economic Empowerment transaction to ensure community benefit.'
     },
     {
       icon: Users,
-      title: 'Traditional Leadership',
-      description: 'Led by Inkosi Martin Mbuyazi and the Mbonambi Traditional Council, upholding Zulu cultural heritage and governance.'
+      title: 'Dedicated Leadership',
+      description: 'Founded by the late Inkosi Sibusiso Mbuyazi and administered by Martin Mbuyazi since 2017, ensuring continuity and community focus.'
     },
     {
       icon: Handshake,
-      title: 'Community Development',
-      description: 'Investing in education, infrastructure, healthcare, and economic opportunities for the Mbonambi community.'
+      title: 'Sustainable Development',
+      description: 'Focusing on education, infrastructure, and sustainable development initiatives that create lasting positive impact for our community.'
     }
   ];
 
@@ -31,12 +31,12 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-            About the Mbonambi Community Trust
+            About the Mbonambi Community Public Benefit Trust
           </h2>
           <p className="text-navy-600 text-lg max-w-4xl mx-auto">
-            Established in 2009 as part of Richards Bay Minerals' broad-based black economic empowerment deal, 
-            the Mbonambi Community Trust serves as the voice and guardian of our community's interests in the 
-            King Cetshwayo District of KwaZulu-Natal.
+            Established in 2009 as part of Richards Bay Minerals' Broad-Based Black Economic Empowerment deal, 
+            our Trust serves the KwaMbonambi community within the uMfolozi Local Municipality, KwaZulu-Natal. 
+            We are committed to transparent governance and sustainable community development.
           </p>
         </div>
 
@@ -68,27 +68,34 @@ const AboutSection = () => {
         {/* Historical Timeline */}
         <div className="bg-sandstone-50 rounded-2xl p-8 mb-16">
           <h3 className="font-heading text-2xl font-bold text-navy-800 mb-6 text-center">Our Journey</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-forest-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Calendar className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-semibold text-navy-800 mb-2">2009</h4>
-              <p className="text-navy-600 text-sm">Trust established under the Trust Property Control Act as part of RBM's empowerment deal</p>
+              <p className="text-navy-600 text-sm">Trust established by the late Inkosi Sibusiso Mbuyazi as part of RBM's B-BBEE transaction</p>
+            </div>
+            <div className="text-center p-4">
+              <div className="w-12 h-12 bg-forest-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-semibold text-navy-800 mb-2">2017</h4>
+              <p className="text-navy-600 text-sm">Martin Mbuyazi appointed as Administrator, ensuring continued community focus and governance</p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-forest-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Handshake className="w-6 h-6 text-white" />
               </div>
-              <h4 className="font-semibold text-navy-800 mb-2">2018</h4>
-              <p className="text-navy-600 text-sm">R74.5 million trust fund formally handed over in ceremony attended by government officials</p>
+              <h4 className="font-semibold text-navy-800 mb-2">2021</h4>
+              <p className="text-navy-600 text-sm">Following DMRE directives, RBM released withheld funds, facilitating expanded community development</p>
             </div>
             <div className="text-center p-4">
               <div className="w-12 h-12 bg-forest-600 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Shield className="w-6 h-6 text-white" />
               </div>
-              <h4 className="font-semibold text-navy-800 mb-2">2025</h4>
-              <p className="text-navy-600 text-sm">High Court affirms traditional leaders' rights and trust governance structure</p>
+              <h4 className="font-semibold text-navy-800 mb-2">Today</h4>
+              <p className="text-navy-600 text-sm">Continuing our mission of transparent governance and sustainable community empowerment</p>
             </div>
           </div>
         </div>
@@ -99,12 +106,13 @@ const AboutSection = () => {
             Ubuntu - I am because we are
           </h3>
           <p className="text-lg mb-6 max-w-4xl mx-auto opacity-90">
-            Through transparent governance, community engagement, and strategic partnerships with RBM and government, 
-            we ensure that every member of the Mbonambi community benefits from development opportunities while 
-            preserving our cultural heritage and traditional leadership under the guidance of our amakhosi.
+            Through transparent governance and strategic partnerships with Richards Bay Minerals and government, 
+            we channel community benefits towards education, infrastructure, and sustainable development. 
+            Despite facing governance challenges, we remain committed to empowering every member of the 
+            KwaMbonambi community while honoring the vision of our founder, the late Inkosi Sibusiso Mbuyazi.
           </p>
           <button className="bg-white text-navy-700 px-8 py-3 rounded-lg font-semibold hover:bg-sandstone-50 transition-all duration-300 hover:scale-105">
-            Learn More About Our Work
+            Learn More About Our Impact
           </button>
         </div>
       </div>
