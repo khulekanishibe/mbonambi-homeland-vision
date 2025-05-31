@@ -7,12 +7,12 @@ from dotenv import load_dotenv
 
 # Import database and routes
 from database import create_indexes
-from backend.routes.auth_routes import router as auth_router
-from backend.routes.events_routes import router as events_router
-from backend.routes.news_routes import router as news_router
-from backend.routes.resources_routes import router as resources_router
-from backend.routes.gallery_routes import router as gallery_router
-from backend.routes.newsletter_routes import router as newsletter_router
+from routes.auth_routes import router as auth_router
+from routes.events_routes import router as events_router
+from routes.news_routes import router as news_router
+from routes.resources_routes import router as resources_router
+from routes.gallery_routes import router as gallery_router
+from routes.newsletter_routes import router as newsletter_router
 
 # Load environment variables
 load_dotenv()
