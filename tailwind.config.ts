@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Mbonambi Trust colors
 				navy: {
 					50: '#f0f4f8',
 					100: '#d9e2ec',
@@ -105,6 +103,9 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			transitionDuration: {
+				'2000': '2000ms',
 			},
 			keyframes: {
 				'accordion-down': {
