@@ -19,11 +19,10 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Events', href: '#events' },
-    { name: 'Announcements', href: '#announcements' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Trusts', href: '#trusts' },
+    { name: 'Trust', href: '/trust' },
+    { name: 'Events', href: '/events' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Get Involved', href: '/get-involved' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -44,12 +43,12 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/ee555ae1-8377-4f56-bf45-320dd2310537.png" 
-              alt="Mbonambi Community Logo" 
+              alt="Mbonambi Community Public Benefit Trust Logo" 
               className="h-12 w-12 object-contain"
             />
             <div className="text-white">
               <div className="font-heading text-lg font-bold">MBONAMBI</div>
-              <div className="text-xs text-sandstone-200">Community</div>
+              <div className="text-xs text-sandstone-200">Community Public Benefit Trust</div>
             </div>
           </Link>
 
@@ -60,25 +59,21 @@ const Navigation = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-forest-300 transition-colors duration-300 font-medium text-sm tracking-wide relative group"
+                  className="text-white hover:text-sandstone-200 transition-colors duration-200 font-medium"
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-forest-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ) : (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`transition-colors duration-300 font-medium text-sm tracking-wide relative group ${
+                  className={`transition-colors duration-200 font-medium ${
                     isActive(item.href) 
-                      ? 'text-forest-300' 
-                      : 'text-white hover:text-forest-300'
+                      ? 'text-sandstone-200 border-b-2 border-sandstone-200' 
+                      : 'text-white hover:text-sandstone-200'
                   }`}
                 >
                   {item.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-forest-400 transition-all duration-300 ${
-                    isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}></span>
                 </Link>
               )
             ))}
@@ -88,7 +83,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-forest-300 transition-colors duration-300"
+              className="text-white hover:text-sandstone-200 transition-colors duration-200"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -97,14 +92,14 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-navy-900/95 backdrop-blur-md rounded-lg mt-2 mb-4 border border-navy-700/50">
+          <div className="md:hidden bg-navy-900/95 backdrop-blur-md rounded-lg mt-2 mb-4">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 item.href.startsWith('#') ? (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-white hover:text-forest-300 hover:bg-navy-800/50 rounded transition-colors duration-300 font-medium"
+                    className="block px-3 py-2 text-white hover:text-sandstone-200 transition-colors duration-200 font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.name}
@@ -113,10 +108,10 @@ const Navigation = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-3 py-2 rounded transition-colors duration-300 font-medium ${
+                    className={`block px-3 py-2 transition-colors duration-200 font-medium ${
                       isActive(item.href) 
-                        ? 'text-forest-300 bg-navy-800/50' 
-                        : 'text-white hover:text-forest-300 hover:bg-navy-800/50'
+                        ? 'text-sandstone-200' 
+                        : 'text-white hover:text-sandstone-200'
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
