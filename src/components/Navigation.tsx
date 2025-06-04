@@ -43,12 +43,12 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/ee555ae1-8377-4f56-bf45-320dd2310537.png" 
-              alt="Mbonambi Community Public Benefit Trust Logo" 
+              alt="Mbonambi Community Logo" 
               className="h-12 w-12 object-contain"
             />
             <div className="text-white">
               <div className="font-heading text-lg font-bold">MBONAMBI</div>
-              <div className="text-xs text-sandstone-200">Community Public Benefit Trust</div>
+              <div className="text-xs text-sandstone-200">Community</div>
             </div>
           </Link>
 
