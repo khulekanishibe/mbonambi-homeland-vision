@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import AnnouncementsSection from '../components/AnnouncementsSection';
+import CommunityGateway from '../components/CommunityGateway';
 import Footer from '../components/Footer';
 import BackgroundSlideshow from '../components/BackgroundSlideshow';
 import ScrollTriggeredImages from '../components/ScrollTriggeredImages';
@@ -25,6 +26,11 @@ const Index = () => {
         {/* About section with extra padding to accommodate overlapping images */}
         <div className="py-20 md:py-32 px-8 md:px-16" id="about">
           <AboutSection />
+        </div>
+        
+        {/* Community Gateway Section */}
+        <div className="py-20 md:py-32 px-8 md:px-16">
+          <CommunityGateway />
         </div>
         
         {/* Announcements section with spacing for image overlays */}
