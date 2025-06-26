@@ -11,8 +11,11 @@ const HeroSection = () => {
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
           {t('home.heroTitle', 'Mbonambi Community')}
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-sandstone-100 mb-8 font-light">
+        <p className="text-lg md:text-xl lg:text-2xl text-sandstone-100 mb-6 font-light">
           {t('home.heroSubtitle', 'Guardians of Our Land, Partners in Progress')}
+        </p>
+        <p className="text-base md:text-lg text-sandstone-200 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+          {t('home.heroDescription', 'Descendants of master blacksmiths who forged the tools and weapons that shaped the Zulu kingdom. From our ancestral forges to modern community development, we honor our heritage while building a united future for all Mbonambi people.')}
         </p>
         <div className="mt-8">
           <button className="bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg">
