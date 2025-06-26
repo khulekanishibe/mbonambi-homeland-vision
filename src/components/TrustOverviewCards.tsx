@@ -1,49 +1,56 @@
 
 import React from 'react';
-import { Building, GraduationCap, MapPin, Scroll } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Heart, GraduationCap, Home, Scroll } from 'lucide-react';
 
 const TrustOverviewCards = () => {
+  const { t } = useTranslation();
+
   const trusts = [
     {
-      name: 'Public Benefit Trust',
-      description: 'Managing community benefits and ensuring transparent distribution of resources for sustainable development.',
-      icon: Building,
-      color: 'bg-navy-100 text-navy-600',
+      name: t('home.trusts.trust1Name', 'Community Public Benefit Trust'),
+      description: t('home.trusts.trust1Desc', 'Focus on health, education, and social welfare projects including scholarships and clinic upgrades.'),
+      icon: Heart,
+      color: 'bg-forest-100 hover:bg-forest-200',
+      iconColor: 'text-forest-600',
       link: '/trust'
     },
     {
-      name: 'Education & Skills Trust',
-      description: 'Empowering our youth through educational opportunities, scholarships, and skills development programs.',
+      name: t('home.trusts.trust2Name', 'Education & Skills Trust'),
+      description: t('home.trusts.trust2Desc', 'Vocational training, youth mentorship, and literacy programs for community development.'),
       icon: GraduationCap,
-      color: 'bg-forest-100 text-forest-600',
-      link: '/education'
+      color: 'bg-navy-100 hover:bg-navy-200',
+      iconColor: 'text-navy-600',
+      link: '/trust'
     },
     {
-      name: 'Land Rights & Development Trust',
-      description: 'Protecting ancestral lands and facilitating sustainable development that honors our heritage.',
-      icon: MapPin,
-      color: 'bg-orange-100 text-orange-600',
-      link: '/land-rights'
+      name: t('home.trusts.trust3Name', 'Land Rights & Development Trust'),
+      description: t('home.trusts.trust3Desc', 'Land restitution, sustainable agriculture, and infrastructure improvements.'),
+      icon: Home,
+      color: 'bg-sandstone-100 hover:bg-sandstone-200',
+      iconColor: 'text-sandstone-600',
+      link: '/trust'
     },
     {
-      name: 'Cultural Preservation Trust',
-      description: 'Safeguarding Mbonambi traditions, language, and blacksmithing heritage for future generations.',
+      name: t('home.trusts.trust4Name', 'Cultural Preservation Trust'),
+      description: t('home.trusts.trust4Desc', 'Documenting oral histories, preserving traditional crafts, and promoting cultural tourism.'),
       icon: Scroll,
-      color: 'bg-purple-100 text-purple-600',
-      link: '/cultural'
+      color: 'bg-orange-100 hover:bg-orange-200',
+      iconColor: 'text-orange-600',
+      link: '/trust'
     }
   ];
 
   return (
-    <section className="py-20 bg-sandstone-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            Our Community Trusts
+            {t('home.trusts.sectionTitle', 'Our Community Trusts')}
           </h2>
-          <p className="text-lg text-navy-600 max-w-3xl mx-auto">
-            Each trust serves a vital role in preserving our heritage while building a prosperous future for the Mbonambi community
+          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+            {t('home.trusts.sectionDesc', 'Specialized trusts working together to serve our community\'s diverse needs')}
           </p>
         </div>
 
@@ -51,24 +58,26 @@ const TrustOverviewCards = () => {
           {trusts.map((trust, index) => {
             const IconComponent = trust.icon;
             return (
-              <Link
+              <Link 
                 key={index}
                 to={trust.link}
                 className="group block"
               >
-                <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 h-full">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${trust.color}`}>
-                    <IconComponent className="w-8 h-8" />
+                <div className={`p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg ${trust.color}`}>
+                  <div className="mb-4 flex justify-center">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className={`w-8 h-8 ${trust.iconColor}`} />
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-xl text-navy-800 mb-4 text-center group-hover:text-forest-700 transition-colors">
+                  <h3 className="font-semibold text-navy-800 mb-3 text-lg text-center">
                     {trust.name}
                   </h3>
-                  <p className="text-navy-600 leading-relaxed text-center">
+                  <p className="text-navy-600 text-sm leading-relaxed text-center">
                     {trust.description}
                   </p>
-                  <div className="mt-6 text-center">
-                    <span className="inline-flex items-center text-forest-600 font-medium group-hover:text-forest-700 transition-colors">
-                      Learn More →
+                  <div className="mt-4 text-center">
+                    <span className="text-sm font-medium text-navy-700 group-hover:text-navy-900 transition-colors">
+                      {t('home.trusts.learnMore', 'Learn More →')}
                     </span>
                   </div>
                 </div>

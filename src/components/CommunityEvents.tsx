@@ -1,37 +1,40 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 
 const CommunityEvents = () => {
+  const { t } = useTranslation();
+
   const events = [
     {
-      title: 'Youth Skills Workshop',
-      date: 'August 2025',
-      time: '9:00 AM - 4:00 PM',
-      location: 'KwaMbonambi Community Center',
-      description: 'Empowering our youth with practical skills including traditional crafts, modern technology, and leadership development.',
-      attendees: '100+ Youth Expected',
-      category: 'Education',
+      title: t('home.events.event1Title', 'Youth Skills Workshop'),
+      date: t('home.events.event1Date', 'August 2025'),
+      time: t('home.events.event1Time', '9:00 AM - 4:00 PM'),
+      location: t('home.events.event1Location', 'Community Center'),
+      description: t('home.events.event1Desc', 'Empowering our youth with practical skills and leadership development.'),
+      attendees: t('home.events.event1Attendees', '100+ Youth Expected'),
+      category: t('home.events.event1Category', 'Education'),
       color: 'bg-forest-100 text-forest-700'
     },
     {
-      title: 'Cultural Festival',
-      date: 'October 2025',
-      time: '8:00 AM - 6:00 PM',
-      location: 'Traditional Grounds',
-      description: 'Annual celebration of Mbonambi heritage featuring traditional music, dance, storytelling, and blacksmithing demonstrations.',
-      attendees: '500+ Community Members',
-      category: 'Cultural',
+      title: t('home.events.event2Title', 'Cultural Festival'),
+      date: t('home.events.event2Date', 'September 2025'),
+      time: t('home.events.event2Time', '8:00 AM - 6:00 PM'),
+      location: t('home.events.event2Location', 'Traditional Grounds'),
+      description: t('home.events.event2Desc', 'Annual celebration featuring traditional music, dance, and demonstrations.'),
+      attendees: t('home.events.event2Attendees', '500+ Community Members'),
+      category: t('home.events.event2Category', 'Cultural'),
       color: 'bg-orange-100 text-orange-700'
     },
     {
-      title: 'Agricultural Market',
-      date: 'September 2025',
-      time: '6:00 AM - 2:00 PM',
-      location: 'Central Market Square',
-      description: 'Monthly community market showcasing local produce, crafts, and traditional foods. Supporting local entrepreneurs.',
-      attendees: '200+ Vendors & Visitors',
-      category: 'Economic',
+      title: t('home.events.event3Title', 'Agricultural Market'),
+      date: t('home.events.event3Date', 'October 2025'),
+      time: t('home.events.event3Time', '6:00 AM - 2:00 PM'),
+      location: t('home.events.event3Location', 'Market Square'),
+      description: t('home.events.event3Desc', 'Monthly market showcasing local produce and crafts.'),
+      attendees: t('home.events.event3Attendees', '200+ Vendors & Visitors'),
+      category: t('home.events.event3Category', 'Economic'),
       color: 'bg-navy-100 text-navy-700'
     }
   ];
@@ -41,10 +44,10 @@ const CommunityEvents = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            Upcoming Events
+            {t('home.events.sectionTitle', 'Upcoming Events')}
           </h2>
           <p className="text-lg text-navy-600 max-w-2xl mx-auto">
-            Join us in celebrating our heritage and building our future together
+            {t('home.events.sectionDesc', 'Join us in celebrating our heritage and building our future together')}
           </p>
         </div>
 
@@ -52,7 +55,7 @@ const CommunityEvents = () => {
           {events.map((event, index) => (
             <div 
               key={index}
-              className="bg-sandstone-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              className="bg-sandstone-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-6">
                 <h3 className="font-semibold text-xl text-navy-800">{event.title}</h3>
@@ -80,12 +83,10 @@ const CommunityEvents = () => {
                 </div>
               </div>
               
-              <p className="text-navy-600 leading-relaxed mb-6">
-                {event.description}
-              </p>
+              <p className="text-navy-600 mb-6">{event.description}</p>
               
               <button className="w-full bg-forest-600 hover:bg-forest-700 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-300">
-                Register Interest
+                {t('home.events.registerButton', 'Register Interest')}
               </button>
             </div>
           ))}

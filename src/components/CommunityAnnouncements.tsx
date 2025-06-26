@@ -1,31 +1,34 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calendar, Award, Drum } from 'lucide-react';
 
 const CommunityAnnouncements = () => {
+  const { t } = useTranslation();
+
   const announcements = [
     {
       type: 'gathering',
       icon: Calendar,
-      title: 'Inkosi\'s Gathering',
-      date: 'July 2025',
-      description: 'Join our traditional community gathering where the Inkosi will address the clan on important matters affecting our community and future development.',
+      title: t('home.announcements.announcement1Title', 'Inkosi\'s Gathering'),
+      date: t('home.announcements.announcement1Date', 'July 2025'),
+      description: t('home.announcements.announcement1Desc', 'Join our traditional community gathering where important matters will be addressed.'),
       priority: 'high'
     },
     {
       type: 'partnership',
       icon: Award,
-      title: 'RBM Partnership Milestone Recognized',
-      date: 'Recent',
-      description: 'Celebrating the successful partnership milestones achieved with Richards Bay Minerals, bringing significant benefits to our community development.',
+      title: t('home.announcements.announcement2Title', 'Partnership Milestone'),
+      date: t('home.announcements.announcement2Date', 'Recent'),
+      description: t('home.announcements.announcement2Desc', 'Celebrating successful partnership milestones achieved in community development.'),
       priority: 'medium'
     },
     {
       type: 'cultural',
       icon: Drum,
-      title: 'Blacksmith Heritage Festival Coming Soon',
-      date: 'Announced',
-      description: 'Prepare for our upcoming festival celebrating the ancient blacksmithing traditions that made the Mbonambi people legendary across the region.',
+      title: t('home.announcements.announcement3Title', 'Heritage Festival'),
+      date: t('home.announcements.announcement3Date', 'Coming Soon'),
+      description: t('home.announcements.announcement3Desc', 'Prepare for our upcoming festival celebrating blacksmithing traditions.'),
       priority: 'high'
     }
   ];
@@ -34,8 +37,7 @@ const CommunityAnnouncements = () => {
     switch (priority) {
       case 'high': return 'border-l-forest-500 bg-forest-50';
       case 'medium': return 'border-l-navy-500 bg-navy-50';
-      case 'low': return 'border-l-sandstone-500 bg-sandstone-50';
-      default: return 'border-l-gray-500 bg-gray-50';
+      default: return 'border-l-sandstone-500 bg-sandstone-50';
     }
   };
 
@@ -44,10 +46,10 @@ const CommunityAnnouncements = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            Community Announcements
+            {t('home.announcements.sectionTitle', 'Community Announcements')}
           </h2>
           <p className="text-lg text-navy-600 max-w-2xl mx-auto">
-            Stay informed about important developments, gatherings, and celebrations in our community
+            {t('home.announcements.sectionDesc', 'Stay informed about important developments and celebrations in our community')}
           </p>
         </div>
 
@@ -57,13 +59,11 @@ const CommunityAnnouncements = () => {
             return (
               <div 
                 key={index}
-                className={`p-8 rounded-lg border-l-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 ${getPriorityColor(announcement.priority)}`}
+                className={`p-8 rounded-lg border-l-4 shadow-md hover:shadow-lg transition-all duration-300 ${getPriorityColor(announcement.priority)}`}
               >
                 <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <IconComponent className="w-6 h-6 text-navy-700" />
-                    </div>
+                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
+                    <IconComponent className="w-6 h-6 text-navy-700" />
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-xl text-navy-800 mb-2">
@@ -72,7 +72,7 @@ const CommunityAnnouncements = () => {
                     <p className="text-sm text-navy-600 mb-4 font-medium">
                       {announcement.date}
                     </p>
-                    <p className="text-navy-600 leading-relaxed">
+                    <p className="text-navy-600">
                       {announcement.description}
                     </p>
                   </div>
@@ -80,12 +80,6 @@ const CommunityAnnouncements = () => {
               </div>
             );
           })}
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-navy-700 hover:bg-navy-800 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg">
-            View All Announcements
-          </button>
         </div>
       </div>
     </section>

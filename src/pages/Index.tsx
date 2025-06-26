@@ -10,65 +10,52 @@ import CommunityPhotoGallery from '../components/CommunityPhotoGallery';
 import TrustOverviewCards from '../components/TrustOverviewCards';
 import GetInvolvedCommunity from '../components/GetInvolvedCommunity';
 import Footer from '../components/Footer';
-import BackgroundSlideshow from '../components/BackgroundSlideshow';
-import ScrollTriggeredImages from '../components/ScrollTriggeredImages';
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
-      {/* Background slideshow */}
-      <BackgroundSlideshow />
+    <div className="min-h-screen">
+      <Navigation />
       
-      {/* Scroll-triggered images that overlap content */}
-      <ScrollTriggeredImages />
+      {/* 1. Hero Section */}
+      <HeroSection />
       
-      {/* Main content with proper z-index layering and spacing for image overlays */}
-      <div className="relative z-40">
-        <Navigation />
-        <HeroSection />
-        
-        {/* About section with extra padding to accommodate overlapping images */}
-        <div className="py-20 md:py-32" id="about">
-          <AboutSection />
-        </div>
-        
-        {/* Clan History Timeline */}
-        <div className="py-20 md:py-32" id="history">
-          <ClanHistoryTimeline />
-        </div>
-        
-        {/* Community Announcements */}
-        <div className="py-20 md:py-32" id="announcements">
-          <CommunityAnnouncements />
-        </div>
-        
-        {/* Upcoming Events */}
-        <div className="py-20 md:py-32" id="events">
-          <CommunityEvents />
-        </div>
-        
-        {/* Photo Gallery Preview */}
-        <div className="py-20 md:py-32" id="gallery">
-          <CommunityPhotoGallery />
-        </div>
-        
-        {/* Trust Overview Cards */}
-        <div className="py-20 md:py-32" id="trusts">
-          <TrustOverviewCards />
-        </div>
-        
-        {/* Get Involved Section */}
-        <div className="py-20 md:py-32" id="get-involved">
-          <GetInvolvedCommunity />
-        </div>
-        
-        {/* Additional spacing for scroll effects */}
-        <div className="py-20 md:py-32"></div>
-        
-        <div id="contact">
-          <Footer />
-        </div>
-      </div>
+      {/* 2. About Section */}
+      <section id="about">
+        <AboutSection />
+      </section>
+      
+      {/* 3. Clan History Timeline */}
+      <section id="history">
+        <ClanHistoryTimeline />
+      </section>
+      
+      {/* 4. Community Announcements */}
+      <section id="announcements">
+        <CommunityAnnouncements />
+      </section>
+      
+      {/* 5. Community Events */}
+      <section id="events">
+        <CommunityEvents />
+      </section>
+      
+      {/* 6. Photo Gallery */}
+      <section id="gallery">
+        <CommunityPhotoGallery />
+      </section>
+      
+      {/* 7. Trust Overview Cards */}
+      <section id="trusts">
+        <TrustOverviewCards />
+      </section>
+      
+      {/* 8. Get Involved */}
+      <section id="get-involved">
+        <GetInvolvedCommunity />
+      </section>
+      
+      {/* 9. Footer */}
+      <Footer />
     </div>
   );
 };

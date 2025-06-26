@@ -1,40 +1,43 @@
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const CommunityPhotoGallery = () => {
+  const { t } = useTranslation();
+  
   const galleryImages = [
     {
       src: '/lovable-uploads/a5a05d20-5142-4894-9114-ccc138784ccd.png',
-      title: 'Community Leadership',
-      category: 'Leadership'
+      title: t('home.gallery.image1Title', 'Community Leadership'),
+      category: t('home.gallery.image1Category', 'Leadership')
     },
     {
       src: '/lovable-uploads/c4c707af-3f2d-4811-9aa0-b81f491400cc.png',
-      title: 'Cultural Celebration',
-      category: 'Culture'
+      title: t('home.gallery.image2Title', 'Cultural Celebration'),
+      category: t('home.gallery.image2Category', 'Culture')
     },
     {
       src: '/lovable-uploads/a7f2540f-7d63-4e91-bee7-def798d3adf9.png',
-      title: 'Community Partnership',
-      category: 'Development'
+      title: t('home.gallery.image3Title', 'Community Partnership'),
+      category: t('home.gallery.image3Category', 'Development')
     },
     {
       src: '/lovable-uploads/f71d2873-1e55-435e-b2da-2642e37bdf5a.png',
-      title: 'Community Discussion',
-      category: 'Engagement'
+      title: t('home.gallery.image4Title', 'Community Discussion'),
+      category: t('home.gallery.image4Category', 'Engagement')
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-sandstone-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            Community Life
+            {t('home.gallery.sectionTitle', 'Community Life')}
           </h2>
           <p className="text-lg text-navy-600 max-w-2xl mx-auto">
-            Visual stories of our heritage, celebrations, and progress as a united community
+            {t('home.gallery.sectionDesc', 'Visual stories of our heritage, celebrations, and progress as a united community')}
           </p>
         </div>
 
@@ -63,7 +66,7 @@ const CommunityPhotoGallery = () => {
             to="/gallery"
             className="inline-block bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
           >
-            View Full Gallery
+            {t('home.gallery.viewAllButton', 'View Full Gallery')}
           </Link>
         </div>
       </div>
