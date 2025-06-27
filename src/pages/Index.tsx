@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -9,6 +8,7 @@ import CommunityEvents from '../components/CommunityEvents';
 import CommunityPhotoGallery from '../components/CommunityPhotoGallery';
 import TrustOverviewCards from '../components/TrustOverviewCards';
 import GetInvolvedCommunity from '../components/GetInvolvedCommunity';
+import CommunityPartners from '../components/CommunityPartners';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -54,7 +54,10 @@ const Index = () => {
         <GetInvolvedCommunity />
       </section>
       
-      {/* 9. Footer */}
+      {/* 9. Community Partners */}
+      <CommunityPartners />
+      
+      {/* 10. Footer */}
       <Footer />
     </div>
   );
