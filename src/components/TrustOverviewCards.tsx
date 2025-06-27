@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -9,27 +8,24 @@ const TrustOverviewCards = () => {
 
   const trusts = [
     {
-      name: t('home.trusts.trust1Name', 'Public Benefit Trust (PBT)'),
-      purpose: t('home.trusts.trust1Purpose', 'Implements development projects including roads, water infrastructure, and educational scholarships for community members.'),
-      role: t('home.trusts.trust1Role', 'Public-facing community improvements and social welfare initiatives.'),
+      name: 'Public Benefit Trust (PBT)',
+      description: 'Delivers infrastructure, education, and health services to the Mbonambi community.',
       icon: Heart,
       color: 'bg-forest-100 hover:bg-forest-200',
       iconColor: 'text-forest-600',
       link: '/trust'
     },
     {
-      name: t('home.trusts.trust2Name', 'Community Development Trust (CDT)'),
-      purpose: t('home.trusts.trust2Purpose', 'Holds 11.25% shareholding in RBM (Richards Bay Minerals) on behalf of the Mbonambi community.'),
-      role: t('home.trusts.trust2Role', 'Governance oversight, shareholder relations, and land/legal matters management.'),
+      name: 'Community Development Trust (CDT)',
+      description: 'Holds shares and represents the community\'s interest in corporate partnerships.',
       icon: Users,
       color: 'bg-navy-100 hover:bg-navy-200',
       iconColor: 'text-navy-600',
       link: '/trust'
     },
     {
-      name: t('home.trusts.trust3Name', 'Empowerment Trust'),
-      purpose: t('home.trusts.trust3Purpose', 'Owns and provides strategic oversight of both CDT and PBT under one unified empowerment structure.'),
-      role: t('home.trusts.trust3Role', 'Strategic oversight of the entire empowerment partnership deal with RBM.'),
+      name: 'Empowerment Trust',
+      description: 'Parent trust overseeing CDT and PBT within the RBM/Blue Horizon BEE structure.',
       icon: Crown,
       color: 'bg-sandstone-100 hover:bg-sandstone-200',
       iconColor: 'text-sandstone-600',
@@ -38,14 +34,14 @@ const TrustOverviewCards = () => {
   ];
 
   return (
-    <section className="py-20 bg-sandstone-50">
+    <section id="trusts" className="py-20 bg-sandstone-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            {t('home.trusts.sectionTitle', 'Our Community Trusts')}
+            Our Trusts
           </h2>
           <p className="text-lg text-navy-600 max-w-3xl mx-auto leading-relaxed">
-            {t('home.trusts.sectionDesc', 'Three interconnected trusts working together to manage our community\'s development, resources, and strategic partnerships for sustainable prosperity.')}
+            Three interconnected trusts working together to manage our community's development, resources, and strategic partnerships for sustainable prosperity.
           </p>
         </div>
 
@@ -69,25 +65,15 @@ const TrustOverviewCards = () => {
                     {trust.name}
                   </h3>
                   
-                  <div className="flex-grow space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-navy-700 mb-2 text-sm uppercase tracking-wide">Purpose</h4>
-                      <p className="text-navy-600 text-sm leading-relaxed">
-                        {trust.purpose}
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-navy-700 mb-2 text-sm uppercase tracking-wide">Role</h4>
-                      <p className="text-navy-600 text-sm leading-relaxed">
-                        {trust.role}
-                      </p>
-                    </div>
+                  <div className="flex-grow">
+                    <p className="text-navy-600 text-base leading-relaxed text-center">
+                      {trust.description}
+                    </p>
                   </div>
                   
                   <div className="mt-6 text-center">
                     <span className="inline-flex items-center text-sm font-semibold text-navy-700 group-hover:text-navy-900 transition-colors bg-white px-4 py-2 rounded-full shadow-sm">
-                      {t('home.trusts.explore', 'Explore Trust')} →
+                      Learn More →
                     </span>
                   </div>
                 </div>
