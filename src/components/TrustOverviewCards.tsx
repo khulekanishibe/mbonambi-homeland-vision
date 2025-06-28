@@ -9,7 +9,13 @@ const TrustOverviewCards = () => {
   const trusts = [
     {
       name: 'Public Benefit Trust (PBT)',
-      description: 'Delivers infrastructure, education, and health services to the Mbonambi community.',
+      description: 'Implements public benefit projects like road upgrades, school refurbishments, elevated reservoirs, and entrepreneurship programs.',
+      details: [
+        'Funding: Draws from RBM BEE benefits and partnerships',
+        'R31M roadway upgrades',
+        'R11.5M elevated reservoir',
+        'R2M furniture workshop (Furniture & Upholstery Initiative)'
+      ],
       icon: Heart,
       color: 'bg-forest-100 hover:bg-forest-200',
       iconColor: 'text-forest-600',
@@ -17,7 +23,12 @@ const TrustOverviewCards = () => {
     },
     {
       name: 'Community Development Trust (CDT)',
-      description: 'Holds shares and represents the community\'s interest in corporate partnerships.',
+      description: 'Holds 11.25% shareholding in Blue Horizon Investments 41 (Pty) Ltd on behalf of the Mbonambi community.',
+      details: [
+        'Represents community interests in governance and economic development',
+        'Linked to land rights and administrative representation',
+        'Strategic partnership management'
+      ],
       icon: Users,
       color: 'bg-navy-100 hover:bg-navy-200',
       iconColor: 'text-navy-600',
@@ -25,7 +36,12 @@ const TrustOverviewCards = () => {
     },
     {
       name: 'Empowerment Trust',
-      description: 'Parent trust overseeing CDT and PBT within the RBM/Blue Horizon BEE structure.',
+      description: 'Parent trust managing both CDT and PBT under the RBM/Blue Horizon BEE framework.',
+      details: [
+        'Established in 2009 as part of RBM\'s 24% share transfer via Blue Horizon Investments',
+        'Guides project approval and legal compliance',
+        'Provides strategic oversight and focus'
+      ],
       icon: Crown,
       color: 'bg-sandstone-100 hover:bg-sandstone-200',
       iconColor: 'text-sandstone-600',
@@ -38,7 +54,7 @@ const TrustOverviewCards = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            Our Trusts
+            Our Community Trusts
           </h2>
           <p className="text-lg text-navy-600 max-w-3xl mx-auto leading-relaxed">
             Three interconnected trusts working together to manage our community's development, resources, and strategic partnerships for sustainable prosperity.
@@ -54,7 +70,7 @@ const TrustOverviewCards = () => {
                 className={`p-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col ${trust.color} border border-white`}
               >
                 <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md">
                     <IconComponent className={`w-10 h-10 ${trust.iconColor}`} />
                   </div>
                 </div>
@@ -64,9 +80,20 @@ const TrustOverviewCards = () => {
                 </h3>
                 
                 <div className="flex-grow">
-                  <p className="text-navy-600 text-base leading-relaxed text-center">
+                  <p className="text-navy-600 text-base leading-relaxed text-center mb-4">
                     {trust.description}
                   </p>
+                  
+                  <div className="text-left">
+                    <ul className="space-y-2">
+                      {trust.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="text-navy-600 text-sm flex items-start">
+                          <span className="text-forest-600 mr-2 mt-1 flex-shrink-0">•</span>
+                          <span className="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
                 
                 <div className="mt-6 text-center">
