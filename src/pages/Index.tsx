@@ -58,7 +58,9 @@ const Index = () => {
       <CommunityPartners />
       
       {/* 10. Footer */}
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </div>
   );
 };

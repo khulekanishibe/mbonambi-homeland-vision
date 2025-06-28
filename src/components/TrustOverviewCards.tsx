@@ -49,35 +49,35 @@ const TrustOverviewCards = () => {
           {trusts.map((trust, index) => {
             const IconComponent = trust.icon;
             return (
-              <Link 
+              <div 
                 key={index}
-                to={trust.link}
-                className="group block h-full"
+                className={`p-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col ${trust.color} border border-white`}
               >
-                <div className={`p-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col ${trust.color} border border-white`}>
-                  <div className="mb-6 flex justify-center">
-                    <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
-                      <IconComponent className={`w-10 h-10 ${trust.iconColor}`} />
-                    </div>
-                  </div>
-                  
-                  <h3 className="font-bold text-navy-800 mb-4 text-xl text-center">
-                    {trust.name}
-                  </h3>
-                  
-                  <div className="flex-grow">
-                    <p className="text-navy-600 text-base leading-relaxed text-center">
-                      {trust.description}
-                    </p>
-                  </div>
-                  
-                  <div className="mt-6 text-center">
-                    <span className="inline-flex items-center text-sm font-semibold text-navy-700 group-hover:text-navy-900 transition-colors bg-white px-4 py-2 rounded-full shadow-sm">
-                      Learn More →
-                    </span>
+                <div className="mb-6 flex justify-center">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
+                    <IconComponent className={`w-10 h-10 ${trust.iconColor}`} />
                   </div>
                 </div>
-              </Link>
+                
+                <h3 className="font-bold text-navy-800 mb-4 text-xl text-center">
+                  {trust.name}
+                </h3>
+                
+                <div className="flex-grow">
+                  <p className="text-navy-600 text-base leading-relaxed text-center">
+                    {trust.description}
+                  </p>
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <Link 
+                    to={trust.link}
+                    className="inline-flex items-center bg-navy-700 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              </div>
             );
           })}
         </div>
