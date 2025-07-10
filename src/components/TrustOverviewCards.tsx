@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Crown } from 'lucide-react';
+import TiltedCard from './TiltedCard'; // Import TiltedCard
 
 const TrustOverviewCards = () => {
   const { t } = useTranslation();
@@ -61,50 +62,44 @@ const TrustOverviewCards = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {trusts.map((trust, index) => {
             const IconComponent = trust.icon;
             return (
-              <div 
+              <TiltedCard
                 key={index}
-                className={`p-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-full flex flex-col ${trust.color} border border-white`}
-              >
-                <div className="mb-6 flex justify-center">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md">
-                    <IconComponent className={`w-10 h-10 ${trust.iconColor}`} />
-                  </div>
-                </div>
-                
-                <h3 className="font-bold text-navy-800 mb-4 text-xl text-center">
-                  {trust.name}
-                </h3>
-                
-                <div className="flex-grow">
-                  <p className="text-navy-600 text-base leading-relaxed text-center mb-4">
-                    {trust.description}
-                  </p>
-                  
-                  <div className="text-left">
-                    <ul className="space-y-2">
-                      {trust.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="text-navy-600 text-sm flex items-start">
-                          <span className="text-forest-600 mr-2 mt-1 flex-shrink-0">•</span>
-                          <span className="leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <Link 
-                    to={trust.link}
-                    className="inline-flex items-center bg-navy-700 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                containerHeight="200px" // Smaller height
+                containerWidth="200px" // Smaller width
+                scale={0.95} // Initial scale (slightly zoomed out)
+                scaleOnHover={1.05} // Zoom in slightly on hover
+                displayOverlayContent={true}
+                showTooltip={true} // Enable tooltip
+                captionText={trust.description}
+                overlayContent={
+                  <div 
+                    className={`p-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-full w-full relative z-10 flex flex-col ${trust.color} border border-white`}
                   >
-                    Learn More →
-                  </Link>
-                </div>
-              </div>
+                    <div className="mb-6 flex justify-center">
+                      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md">
+                        <IconComponent className={`w-10 h-10 ${trust.iconColor}`} />
+                      </div>
+                    </div>
+                    
+                    <h3 className="font-bold text-navy-800 mb-4 text-xl text-center">
+                      {trust.name}
+                    </h3>
+                    
+                    <div className="mt-6 text-center">
+                      <Link 
+                        to={trust.link}
+                        className="inline-flex items-center bg-navy-700 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                      >
+                        Learn More →
+                      </Link>
+                    </div>
+                  </div>
+                }
+              />
             );
           })}
         </div>

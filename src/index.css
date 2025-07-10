@@ -160,3 +160,29 @@ html {
 .animate-wing-flap {
   animation: wing-flap 0.3s ease-in-out infinite;
 }
+
+/* Glow effect for buttons */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(35, 107, 71, 0.8); /* Initial glow */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 25px rgba(35, 107, 71, 1), 0 0 40px rgba(35, 107, 71, 0.7); /* Enhanced glow on hover */
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 15px rgba(35, 107, 71, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(35, 107, 71, 1), 0 0 40px rgba(35, 107, 71, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(35, 107, 71, 0.8);
+  }
+}
+
+.glow-effect.animate-glow {
+  animation: pulse-glow 2s infinite alternate;
+}

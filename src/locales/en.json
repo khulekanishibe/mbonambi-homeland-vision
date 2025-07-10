@@ -8,5 +8,11 @@
   "gallery": "Gallery",
   "events": "Events",
   "getInvolved": "Get Involved",
-  "welcome": "Welcome to the Mbonambi Community"
+  "welcome": "Welcome to the Mbonambi Community",
+  "hero": {
+    "title": "Mbonambi Community",
+    "subtitle": "Guardians of Our Land, Partners in Progress",
+    "description": "From the legendary forges of our ancestors to the modern halls of progress, the Mbonambi people continue their legacy of craftsmanship, unity, and resilience.",
+    "cta": "Explore Our Heritage"
+  }
 }
