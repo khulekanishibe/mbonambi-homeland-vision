@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import RotatingText from './RotatingText';
+import SplashCursor from './effects/SplashCursor';
 
 import { RevealText } from './ui/RevealText';
 
@@ -8,6 +9,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen overflow-hidden">
+      <SplashCursor />
       {/* Video Background */}
       <video autoPlay loop muted playsInline preload="auto" poster="/videos/vlcsnap-2025-07-13-14h05m58s976.png" className="absolute top-0 left-0 w-full h-full object-cover z-0">
         <source src="/videos/hero-background.mp4" type="video/mp4" />
