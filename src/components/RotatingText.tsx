@@ -8,37 +8,65 @@ import {
   useMemo,
   useState,
 } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Transition, HTMLMotionProps, TargetAndTransition, VariantLabels } from "framer-motion";
 
-function cn(...classes) {
+function cn(...classes: (string | undefined | null | false)[]): string {
   return classes.filter(Boolean).join(" ");
 }
 
-const RotatingText = forwardRef((props, ref) => {
-  const {
-    texts,
-    transition = { type: "spring", damping: 25, stiffness: 300 },
-    initial = { y: "100%", opacity: 0 },
-    animate = { y: 0, opacity: 1 },
-    exit = { y: "-120%", opacity: 0 },
-    animatePresenceMode = "wait",
-    animatePresenceInitial = false,
-    rotationInterval = 2000,
-    staggerDuration = 0,
-    staggerFrom = "first",
-    loop = true,
-    auto = true,
-    splitBy = "characters",
-    onNext,
-    mainClassName,
-    splitLevelClassName,
-    elementLevelClassName,
-    ...rest
-  } = props;
+interface RotatingTextProps extends Omit<HTMLMotionProps<"span">, 'initial' | 'animate' | 'exit'> {
+  texts: string[];
+  transition?: Transition;
+  initial?: boolean | TargetAndTransition | VariantLabels;
+  animate?: boolean | TargetAndTransition | VariantLabels;
+  exit?: TargetAndTransition | VariantLabels;
+  animatePresenceMode?: "wait" | "sync" | "popLayout";
+  animatePresenceInitial?: boolean;
+  rotationInterval?: number;
+  staggerDuration?: number;
+  staggerFrom?: "first" | "last" | "center" | number;
+  loop?: boolean;
+  auto?: boolean;
+  splitBy?: "characters" | "words" | "lines" | string;
+  onNext?: (newIndex: number) => void;
+  mainClassName?: string;
+  splitLevelClassName?: string;
+  elementLevelClassName?: string;
+}
+
+export interface RotatingTextHandle {
+  next: () => void;
+  previous: () => void;
+  jumpTo: (index: number) => void;
+  reset: () => void;
+}
+
+const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>(
+  (props, ref) => {
+    const {
+      texts,
+      transition = { type: "spring", damping: 25, stiffness: 300 },
+      initial = { y: "100%", opacity: 0 },
+      animate = { y: 0, opacity: 1 },
+      exit = { y: "-120%", opacity: 0 },
+      animatePresenceMode = "wait",
+      animatePresenceInitial = false,
+      rotationInterval = 2000,
+      staggerDuration = 0,
+      staggerFrom = "first",
+      loop = true,
+      auto = true,
+      splitBy = "characters",
+      onNext,
+      mainClassName,
+      splitLevelClassName,
+      elementLevelClassName,
+      ...rest
+    } = props;
 
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-  const splitIntoCharacters = (text) => {
+  const splitIntoCharacters = (text: string): string[] => {
     if (typeof Intl !== "undefined" && Intl.Segmenter) {
       const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
       return Array.from(segmenter.segment(text), (segment) => segment.segment);
@@ -182,7 +210,7 @@ const RotatingText = forwardRef((props, ref) => {
           {elements.map((wordObj, wordIndex, array) => {
             const previousCharsCount = array
               .slice(0, wordIndex)
-              .reduce((sum, word) => sum + word.characters.length, 0);
+.reduce((sum, word) => sum + word.characters.length, 0);
             return (
               <span key={wordIndex} className={cn("inline-flex", splitLevelClassName)}>
                 {wordObj.characters.map((char, charIndex) => (

@@ -174,7 +174,7 @@ const CommunityAnnouncements = () => {
                     <div className="flex justify-end">
                       <Button 
                         variant="outline" 
-                        className="group/btn hover:bg-navy-700 hover:text-white hover:border-navy-700 transition-all duration-300"
+                        className="group/btn hover:bg-navy-700 hover:text-white hover:border-navy-700 dark:text-white dark:hover:bg-sandstone-300 dark:hover:text-navy-900 transition-all duration-300"
                       >
                         {announcement.cta}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
@@ -192,14 +192,14 @@ const CommunityAnnouncements = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4">
             <Button 
               size="lg"
-              className="bg-navy-700 hover:bg-navy-800 text-white px-8 py-4 text-lg font-semibold"
+              className="bg-navy-700 hover:bg-navy-800 text-white dark:bg-sandstone-300 dark:text-navy-900 dark:hover:bg-sandstone-400 px-8 py-4 text-lg font-semibold"
             >
               {t('announcements.viewAll', 'View All Announcements')}
             </Button>
             <Button 
               variant="outline" 
               size="lg"
-              className="border-forest-600 text-forest-700 hover:bg-forest-600 hover:text-white px-8 py-4 text-lg font-semibold"
+              className="border-forest-600 text-forest-700 hover:bg-forest-600 hover:text-white dark:text-white dark:border-sandstone-300 dark:hover:bg-sandstone-300 dark:hover:text-navy-900 px-8 py-4 text-lg font-semibold"
             >
               {t('announcements.subscribe', 'Subscribe to Updates')}
             </Button>

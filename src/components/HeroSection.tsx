@@ -1,16 +1,18 @@
-
 import React, { useRef } from 'react';
-import TrueFocus from './TrueFocus'; // Assuming TrueFocus is in the same directory
 import RotatingText from './RotatingText';
-import AnimatedBackground from './AnimatedBackground';
+
+import { RevealText } from './ui/RevealText';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Animated Background */}
-      <AnimatedBackground />
+      {/* Video Background */}
+      <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <source src="/videos/hero-background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       
       {/* Enhanced overlay for better text readability over slideshow */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy-900/80 via-navy-800/70 to-forest-900/80 z-10" />
@@ -19,14 +21,14 @@ const HeroSection = () => {
       <div ref={heroRef} className="relative z-20 flex items-center justify-center h-full">
         <div className="text-center px-4 max-w-5xl mx-auto">
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Mbonambi <RotatingText
+            <RevealText text="Mbonambi" /> <RotatingText
               texts={['Community', 'Trust', 'Land']}
-              rotationInterval={3000}
-              mainClassName="px-2 sm:px-2 md:px-3 bg-forest-600 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 rounded-lg"
+              rotationInterval={4000}
+              mainClassName="px-2 sm:px-2 md:px-3 bg-rotating-text-bg text-black overflow-hidden py-0.5 sm:py-1 md:py-2 rounded-lg"
             />
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-sandstone-100 mb-8 font-light animate-fade-in animation-delay-300">
-            <TrueFocus sentence="Guardians of Our Land, Partners in Progress" manualMode={true} initialIndex={6} />
+            Guardians of our land, partners in progress
           </p>
           <div className="text-base md:text-lg text-sandstone-200 mb-8 animate-fade-in animation-delay-600 max-w-3xl mx-auto">
             <p>

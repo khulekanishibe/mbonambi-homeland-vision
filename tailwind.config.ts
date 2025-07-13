@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -80,7 +81,7 @@ export default {
 					200: '#a8d4bb',
 					300: '#7cbf99',
 					400: '#50a677',
-					500: '#2d8659',
+										500: '#2d8659',
 					600: '#236b47',
 					700: '#1a5035',
 					800: '#113523',
@@ -90,14 +91,15 @@ export default {
 					50: '#faf8f5',
 					100: '#f2ede4',
 					200: '#e6d6c4',
-					300: '#d9bfa4',
+					300: '#deb887',
 					400: '#cca884',
 					500: '#b8956a',
 					600: '#9a7c56',
 					700: '#7c6342',
 					800: '#5e4a2e',
 					900: '#40311a',
-				}
+				},
+				'rotating-text-bg': '#deb887',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -151,14 +153,20 @@ export default {
 					'100%': {
 						transform: 'translateY(-20px)'
 					}
-				}
+				},
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'parallax': 'parallax 20s ease-in-out infinite alternate'
+				'parallax': 'parallax 20s ease-in-out infinite alternate',
+        gradient: "gradient var(--animation-duration, 8s) linear infinite",
 			},
 			fontFamily: {
 				'heading': ['Playfair Display', 'serif'],
@@ -166,5 +174,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;
