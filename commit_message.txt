@@ -1,7 +1,0 @@
-feat: Implement animated hero background and refined TiltedCard effects
-
-This commit introduces several UI/UX enhancements:
-- Adds an animated gradient background to the HeroSection using custom forest colors.
-- Integrates the RotatingText component for dynamic text display in the HeroSection.
-- Refines the TiltedCard component for TrustOverviewCards, enabling a zoom-in/out effect on hover and displaying trust descriptions as tooltips.
-- Adjusts card sizing and spacing for a cleaner layout.
