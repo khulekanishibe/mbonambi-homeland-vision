@@ -7,28 +7,28 @@ const TrustHistory = () => {
     {
       year: '2009',
       title: 'Trust Establishment',
-      description: 'Founded by the late Inkosi Sibusiso Mbuyazi as part of Richards Bay Minerals\' Broad-Based Black Economic Empowerment transaction.',
+      description: 'Empowerment structure formed through Blue Horizon Investments 41 (Pty) Ltd, which received 24% of RBM.',
       icon: Calendar,
       color: 'bg-forest-100 text-forest-600'
     },
     {
-      year: '2017',
+      year: '2016',
       title: 'Leadership Transition',
-      description: 'Martin Mbuyazi appointed as Trust Administrator, ensuring continued community focus and governance excellence.',
+      description: 'Martin Mbuyazi appointed interim administrator by KZN Premier.',
       icon: Users,
       color: 'bg-navy-100 text-navy-600'
     },
     {
       year: '2021',
       title: 'Funding Release',
-      description: 'Following DMRE directives, RBM released withheld funds totaling R74.5 million, facilitating expanded community development initiatives.',
+      description: 'DMRE orders release of trust funds for public benefit.',
       icon: Award,
       color: 'bg-sandstone-100 text-sandstone-600'
     },
     {
-      year: '2024',
-      title: 'Continued Growth',
-      description: 'Ongoing commitment to transparent governance, sustainable development, and community empowerment across KwaMbonambi.',
+      year: '2025',
+      title: 'Court Affirmation',
+      description: 'Court affirms Mbonambi community representation via CDT/PBT under Martin Mbuyazi.',
       icon: Handshake,
       color: 'bg-forest-100 text-forest-600'
     }

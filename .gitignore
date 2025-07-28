@@ -22,4 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignored files
+*.docx
+CLAUDE.md
+Chat.txt
+ErrorLog.txt
 .env

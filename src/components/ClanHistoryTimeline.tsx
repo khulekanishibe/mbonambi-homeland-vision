@@ -40,7 +40,7 @@ const ClanHistoryTimeline = () => {
       title: 'Ancestral Legacy Begins',
       subtitle: '"From the Fires of the Forge, We Rose."',
       description: 'The Mbonambi clan, a revered Zulu lineage, was known for blacksmithing excellence — crafting tools, weapons, and cultural symbols for the Zulu Kingdom.',
-      expandedContent: `Settled in northern KwaZulu-Natal, their metallurgical skills made them vital to both trade and war.\n\nOral histories credit Mbonambi smiths for forging spears used during Shaka Zulu\'s military campaigns.\n\nThe word "Mbonambi" is derived from "abonwa ngabanye" – meaning "the ones who are seen/respected by others."\n\n🌀 Cultural Impact: Mbonambi blacksmiths held sacred status, blending spirituality and utility.`,
+      expandedContent: `Settled in northern KwaZulu-Natal, their metallurgical skills made them vital to both trade and war.\n\nOral histories credit Mbonambi smiths for forging spears used during Shaka Zulu's military campaigns.\n\nThe word "Mbonambi" is derived from "abonwa ngabanye" – meaning "the ones who are seen/respected by others."\n\n🌀 Cultural Impact: Mbonambi blacksmiths held sacred status, blending spirituality and utility.`,
       icon: Hammer,
       color: 'bg-orange-500',
       dotColor: 'border-orange-500'
@@ -60,7 +60,7 @@ const ClanHistoryTimeline = () => {
       title: 'Bambatha Rebellion',
       subtitle: '"Standing Against Colonial Oppression"',
       description: 'Mbonambi leaders participated in the Bambatha Rebellion against British colonial taxation and land policies.',
-      expandedContent: `The rebellion, led by Chief Bambatha kaMancinza, saw Mbonambi warriors join the resistance against the poll tax imposed by the Natal government.\n\nThough the rebellion was ultimately unsuccessful, it demonstrated the clan\'s commitment to resisting colonial oppression.\n\nMany Mbonambi families faced displacement and persecution following the rebellion\'s defeat.\n\n⚔️ Courage: The clan\'s participation cemented their reputation as defenders of traditional rights.`,
+      expandedContent: `The rebellion, led by Chief Bambatha kaMancinza, saw Mbonambi warriors join the resistance against the poll tax imposed by the Natal government.\n\nThough the rebellion was ultimately unsuccessful, it demonstrated the clan's commitment to resisting colonial oppression.\n\nMany Mbonambi families faced displacement and persecution following the rebellion's defeat.\n\n⚔️ Courage: The clan's participation cemented their reputation as defenders of traditional rights.`,
       icon: Swords,
       color: 'bg-forest-600',
       dotColor: 'border-forest-600'
@@ -100,7 +100,7 @@ const ClanHistoryTimeline = () => {
       title: 'Modern Leadership Era',
       subtitle: '"Building Tomorrow on Ancestral Wisdom"',
       description: "Under Martin Mbuyazi's leadership, the community has achieved unprecedented growth and recognition.",
-      expandedContent: `The appointment of Martin Mbuyazi as Trust Administrator marked a new era of transparent governance and strategic development.\n\nMajor infrastructure projects include schools, clinics, and community centers throughout the KwaMbonambi area.\n\nLegal victories have secured additional mineral rights and strengthened the community\'s economic position.\n\n🏗️ Progress: Modern development balanced with traditional values creates sustainable prosperity.`,
+      expandedContent: `The appointment of Martin Mbuyazi as Trust Administrator marked a new era of transparent governance and strategic development.\n\nMajor infrastructure projects include schools, clinics, and community centers throughout the KwaMbonambi area.\n\nLegal victories have secured additional mineral rights and strengthened the community's economic position.\n\n🏗️ Progress: Modern development balanced with traditional values creates sustainable prosperity.`,
       icon: Building,
       color: 'bg-forest-600',
       dotColor: 'border-forest-600'
@@ -202,7 +202,7 @@ const ClanHistoryTimeline = () => {
                         baseRotation={6}
                         stagger={6}
                         textClassName="text-navy-700 !text-base md:!text-lg !font-normal leading-relaxed"
-                        endTriggerRef={cardRefs.current[index + 1]}
+                        endTriggerRef={{ current: cardRefs.current[index + 1] }}
                       >
                         {milestone.expandedContent}
                       </ScrollReveal>
@@ -214,13 +214,6 @@ const ClanHistoryTimeline = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
-            <Crown className="w-5 h-5" />
-            {t('home.history.cta', 'Explore Our Heritage Further')}
-          </div>
-        </div>
       </div>
     </section>
   );

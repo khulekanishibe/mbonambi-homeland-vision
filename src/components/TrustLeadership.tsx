@@ -6,17 +6,33 @@ const TrustLeadership = () => {
   const leaders = [
     {
       name: 'Martin Mbuyazi',
-      role: 'Trust Administrator',
-      period: 'Since 2017',
-      description: 'Leading the Trust with dedication to community empowerment and transparent governance, continuing the vision established by the late Inkosi Sibusiso Mbuyazi.',
+      role: 'Chair, Empowerment Trust; ultimate oversight of CDT & PBT',
+      period: 'Since 2016',
+      description: 'Appointed administrator of CDT and PBT by the KZN Premier\'s office, providing ultimate oversight.',
       image: '/lovable-uploads/a5a05d20-5142-4894-9114-ccc138784ccd.png',
       icon: User
     },
     {
-      name: 'The Late Inkosi Sibusiso Mbuyazi',
-      role: 'Founder',
-      period: '2009 - 2017',
-      description: 'Visionary leader who established the Trust as part of the B-BBEE transaction with RBM, laying the foundation for community development and empowerment.',
+      name: 'Lulama Cele-Boughey',
+      role: 'COO, Empowerment Trust; Project Director, PBT',
+      period: 'Current',
+      description: 'Manages day-to-day operations of the Empowerment Trust and directs projects for the Public Benefit Trust.',
+      image: '/lovable-uploads/a5a05d20-5142-4894-9114-ccc138784ccd.png',
+      icon: User
+    },
+    {
+      name: 'Manne Dipico',
+      role: 'Non-exec Trustee, Empowerment Trust',
+      period: 'Current',
+      description: 'Former Premier, serves as a governance advisor to the Empowerment Trust.',
+      image: '/lovable-uploads/a5a05d20-5142-4894-9114-ccc138784ccd.png',
+      icon: User
+    },
+    {
+      name: 'Nhlanhla Gasa',
+      role: 'Trustee Emeritus (Deceased)',
+      period: 'Founding',
+      description: 'A founding director of the trust structure, his legacy continues to be an inspiration.',
       image: '/lovable-uploads/f71d2873-1e55-435e-b2da-2642e37bdf5a.png',
       icon: Crown,
       isFounder: true

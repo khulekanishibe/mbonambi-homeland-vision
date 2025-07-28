@@ -1,28 +1,62 @@
 
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Hammer, Shield, Mountain, Users } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
+import type { Application } from '@splinetool/runtime';
+import { Hammer, Shield, Mountain, Users, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+type Feature = {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+};
 
 const AboutSection = () => {
   const { t } = useTranslation();
+  const spline = useRef<Application | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
+
+  function onSplineLoad(splineApp: Application) {
+    spline.current = splineApp;
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (sectionRef.current && spline.current) {
+        const { top, height } = sectionRef.current.getBoundingClientRect();
+        const scrollPercent = Math.max(0, Math.min(100, (-top / (height - window.innerHeight)) * 100));
+        spline.current.setVariable('scroll', scrollPercent);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const features = [
     {
+      id: 1,
       icon: Hammer,
       title: t('home.about.feature1Title', 'Master Blacksmiths'),
       description: t('home.about.feature1Desc', 'Renowned across the region for crafting superior tools and weapons that equipped the Zulu impis and neighboring communities.')
     },
     {
+      id: 2,
       icon: Shield,
       title: t('home.about.feature2Title', 'Allied with Kings'),
       description: t('home.about.feature2Desc', 'Proud contributors to the Zulu military strength under King Shaka, our forge-masters were sought after by royalty.')
     },
     {
+      id: 3,
       icon: Mountain,
       title: t('home.about.feature3Title', 'Guardians of the Land'),
       description: t('home.about.feature3Desc', 'KwaMbonambi - "Place of the Mbonambi" - named after our legendary artisans who made this land their home.')
     },
     {
+      id: 4,
       icon: Users,
       title: t('home.about.feature4Title', 'Living Heritage'),
       description: t('home.about.feature4Desc', 'Maintaining our ancestral traditions while embracing modern development in King Cetshwayo District.')
@@ -30,39 +64,68 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-sandstone-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
-            {t('home.about.title', 'About the Mbonambi Clan')}
-          </h2>
-          <p className="text-lg text-navy-600 max-w-4xl mx-auto leading-relaxed">
-            {t('home.about.description', 'The Mbonambi clan is an Nguni-speaking people with deep roots in the Zulu kingdom, known historically for their exceptional skill in blacksmithing. From the 15th century, our ancestors forged the iron tools and weapons that shaped this region\'s early economy and defense. Today, we honor this proud heritage while fostering unity, cultural identity, and sustainable community development across King Cetshwayo District.')}
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return (
-              <div 
-                key={index}
-                className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-16 h-16 bg-forest-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <IconComponent className="w-8 h-8 text-forest-600" />
-                </div>
-                <h3 className="font-semibold text-xl text-navy-800 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-navy-600">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+    <section ref={sectionRef} className="h-screen bg-theme text-white relative overflow-hidden flex flex-col justify-end pb-24">
+      {/* Background Spline Animation */}
+      <div className="absolute inset-0 w-full h-full">
+        <Spline
+          scene="https://prod.spline.design/h0gtlwldM-Pjzt1D/scene.splinecode"
+          onLoad={onSplineLoad}
+          className="w-full h-full"
+        />
       </div>
+
+      {/* Icons at the bottom */}
+      <div className="relative z-10 flex justify-center items-center gap-8 pb-8">
+        {features.map((feature) => {
+          const IconComponent = feature.icon;
+          return (
+            <motion.div
+              key={feature.id}
+              onClick={() => setSelectedFeature(feature)}
+              className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/20 transition-all duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <IconComponent className="w-10 h-10 text-sandstone-300" />
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Animated card in the center */}
+      <AnimatePresence>
+        {selectedFeature && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="absolute inset-0 z-20 flex items-center justify-center bg-black/50 backdrop-blur-md"
+            onClick={() => setSelectedFeature(null)}
+          >
+            <motion.div
+              className="relative text-center p-8 bg-black/30 backdrop-blur-lg border border-white/10 rounded-lg shadow-lg max-w-md w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedFeature(null)}
+                className="absolute top-4 right-4 text-white/50 hover:text-white"
+              >
+                <X size={24} />
+              </button>
+              <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <selectedFeature.icon className="w-12 h-12 text-sandstone-300" />
+              </div>
+              <h3 className="font-semibold text-2xl text-white mb-4">
+                {selectedFeature.title}
+              </h3>
+              <p className="text-sandstone-200 text-lg">
+                {selectedFeature.description}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

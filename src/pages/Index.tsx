@@ -7,7 +7,6 @@ import CommunityAnnouncements from '../components/CommunityAnnouncements';
 import CommunityEvents from '../components/CommunityEvents';
 import CommunityPhotoGallery from '../components/CommunityPhotoGallery';
 import TrustOverviewCards from '../components/TrustOverviewCards';
-import GetInvolvedCommunity from '../components/GetInvolvedCommunity';
 import CommunityPartners from '../components/CommunityPartners';
 import Footer from '../components/Footer';
 
@@ -49,10 +48,6 @@ const Index = () => {
         <TrustOverviewCards />
       </section>
       
-      {/* 8. Get Involved */}
-      <section id="get-involved">
-        <GetInvolvedCommunity />
-      </section>
       
       {/* 9. Community Partners */}
       <CommunityPartners />

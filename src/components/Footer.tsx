@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer id="contact" className="bg-navy-900 text-white py-16">
+    <footer id="contact" className="bg-theme text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <span className="text-navy-200">www.mbonambi.org.za</span>
               </div>
             </div>
-            <div className="mt-6 p-4 bg-navy-800 rounded-lg">
+            <div className="mt-6 p-4 bg-black/20 rounded-lg">
               <p className="text-sm text-sandstone-200">
                 Community members are encouraged to participate in meetings, cultural events, 
                 and development initiatives that strengthen our collective future.
@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-navy-700 mt-12 pt-8 text-center">
+        <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-navy-300 text-sm">
             © 2024 Mbonambi Community. All rights reserved. | 
             <span className="text-sandstone-300 ml-2">Heritage • Unity • Progress</span>

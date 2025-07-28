@@ -11,7 +11,6 @@ import Index from "./pages/Index";
 import TrustOverview from "./pages/TrustOverview";
 import CommunityEvents from "./pages/CommunityEvents";
 import PhotoGallery from "./pages/PhotoGallery";
-import GetInvolved from "./pages/GetInvolved";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,7 +31,6 @@ const App = () => (
           <Route path="/trust" element={<TrustOverview />} />
           <Route path="/events" element={<CommunityEvents />} />
           <Route path="/gallery" element={<PhotoGallery />} />
-          <Route path="/get-involved" element={<GetInvolved />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

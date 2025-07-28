@@ -29,14 +29,6 @@ const CommunityGateway = () => {
       color: 'bg-sandstone-100 hover:bg-sandstone-200',
       iconColor: 'text-sandstone-600'
     },
-    {
-      title: 'Get Involved',
-      description: 'Discover opportunities to volunteer, donate, and actively participate in community development',
-      icon: Heart,
-      link: '/get-involved',
-      color: 'bg-red-100 hover:bg-red-200',
-      iconColor: 'text-red-600'
-    }
   ];
 
   return (

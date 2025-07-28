@@ -87,6 +87,9 @@ export default {
 					800: '#113523',
 					900: '#081a11',
 				},
+				theme: {
+					DEFAULT: 'rgb(10, 45, 1)',
+				},
 				sandstone: {
 					50: '#faf8f5',
 					100: '#f2ede4',

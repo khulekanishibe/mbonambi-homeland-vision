@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 const CommunityEvents = () => {
   const { t } = useTranslation();

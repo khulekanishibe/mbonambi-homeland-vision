@@ -18,7 +18,6 @@ const CommunityAnnouncements = () => {
       title: t('announcements.meeting.title', 'Quarterly Community Meeting - March 2025'),
       summary: t('announcements.meeting.summary', 'Join us for updates on trust activities, RBM partnership progress, and community development initiatives.'),
       date: '2025-03-15',
-      cta: t('announcements.meeting.cta', 'Register to Attend'),
       urgent: true
     },
     {
@@ -29,7 +28,6 @@ const CommunityAnnouncements = () => {
       title: t('announcements.court.title', 'Land Rights Court Victory'),
       summary: t('announcements.court.summary', 'Successful outcome in King Cetshwayo District Court regarding ancestral land recognition and community representation.'),
       date: '2025-02-20',
-      cta: t('announcements.court.cta', 'View Court Documents'),
       urgent: false
     },
     {
@@ -40,7 +38,6 @@ const CommunityAnnouncements = () => {
       title: t('announcements.rbm.title', 'RBM Partnership Milestone Achieved'),
       summary: t('announcements.rbm.summary', 'Celebrating 15 years of successful BEE shareholding partnership with Richards Bay Minerals and new development commitments.'),
       date: '2025-02-10',
-      cta: t('announcements.rbm.cta', 'Read Full Report'),
       urgent: false
     },
     {
@@ -51,7 +48,6 @@ const CommunityAnnouncements = () => {
       title: t('announcements.scholarship.title', 'New Scholarship Program Launch'),
       summary: t('announcements.scholarship.summary', 'Educational trust announces expanded scholarship opportunities for Mbonambi youth pursuing higher education.'),
       date: '2025-01-28',
-      cta: t('announcements.scholarship.cta', 'Apply Now'),
       urgent: false
     },
     {
@@ -62,7 +58,6 @@ const CommunityAnnouncements = () => {
       title: t('announcements.infrastructure.title', 'Community Infrastructure Update'),
       summary: t('announcements.infrastructure.summary', 'Progress report on road improvements, water access projects, and clinic facility upgrades in our traditional areas.'),
       date: '2025-01-15',
-      cta: t('announcements.infrastructure.cta', 'View Progress'),
       urgent: false
     }
   ];
@@ -167,19 +162,9 @@ const CommunityAnnouncements = () => {
                   </CardHeader>
                   
                   <CardContent className="pt-0">
-                    <p className="text-navy-600 text-base leading-relaxed mb-6">
+                    <p className="text-navy-600 text-base leading-relaxed">
                       {announcement.summary}
                     </p>
-                    
-                    <div className="flex justify-end">
-                      <Button 
-                        variant="outline" 
-                        className="group/btn hover:bg-navy-700 hover:text-white hover:border-navy-700 dark:text-white dark:hover:bg-sandstone-300 dark:hover:text-navy-900 transition-all duration-300"
-                      >
-                        {announcement.cta}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                      </Button>
-                    </div>
                   </CardContent>
                 </Card>
               );
@@ -188,23 +173,6 @@ const CommunityAnnouncements = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-            <Button 
-              size="lg"
-              className="bg-navy-700 hover:bg-navy-800 text-white dark:bg-sandstone-300 dark:text-navy-900 dark:hover:bg-sandstone-400 px-8 py-4 text-lg font-semibold"
-            >
-              {t('announcements.viewAll', 'View All Announcements')}
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-forest-600 text-forest-700 hover:bg-forest-600 hover:text-white dark:text-white dark:border-sandstone-300 dark:hover:bg-sandstone-300 dark:hover:text-navy-900 px-8 py-4 text-lg font-semibold"
-            >
-              {t('announcements.subscribe', 'Subscribe to Updates')}
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );
