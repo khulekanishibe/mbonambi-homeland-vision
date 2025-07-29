@@ -23,9 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Ignored files
+# User-specific files
+.claude/
+*.png
 *.docx
-CLAUDE.md
-Chat.txt
-ErrorLog.txt
-.env
+*.txt
