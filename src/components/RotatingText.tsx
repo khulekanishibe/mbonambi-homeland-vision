@@ -115,7 +115,10 @@ const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>(
         const randomIndex = Math.floor(Math.random() * total);
         return Math.abs(randomIndex - index) * staggerDuration;
       }
-      return Math.abs(staggerFrom - index) * staggerDuration;
+      if (typeof staggerFrom === "number") {
+        return Math.abs(staggerFrom - index) * staggerDuration;
+      }
+      return 0;
     },
     [staggerFrom, staggerDuration]
   );

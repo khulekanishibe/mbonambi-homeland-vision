@@ -68,6 +68,7 @@ const TrustOverviewCards = () => {
             return (
               <TiltedCard
                 key={index}
+                imageSrc="" // Empty image source since we're using overlay content
                 containerHeight="200px" // Smaller height
                 containerWidth="200px" // Smaller width
                 scale={0.95} // Initial scale (slightly zoomed out)
