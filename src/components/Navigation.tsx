@@ -150,13 +150,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-black/20 focus:bg-black/20 text-white",
+            "block select-none space-y-1 rounded-none p-3 leading-none no-underline outline-none transition-colors hover:bg-forest-200 focus:bg-forest-200 text-forest-900",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-sandstone-200/80">
+          <p className="line-clamp-2 text-sm leading-snug text-forest-800">
             {children}
           </p>
         </a>
@@ -211,7 +211,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
               {item.title}
             </span>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="border-transparent bg-theme/70 backdrop-blur-md">
+          <NavigationMenuContent className="border-transparent bg-forest-50">
             <div className="grid w-[600px] grid-cols-2 gap-3 p-4">
               {item.items.map((subItem) => (
                 <ListItem key={subItem.title} title={subItem.title} href={subItem.href} items={subItem.items}>
