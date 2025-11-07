@@ -1,0 +1,157 @@
+You are a web copywriter and content generator. Create structured, professional, and engaging generic web page content for each of the following sections of the Mbonambi Community Trust website:
+
+- Community Development Trust (CDT)
+- Public Benefit Trust (PBT)
+- Land Trust
+- Stakeholders
+- Business with Us
+- Gallery
+- Contacts
+
+🎯 Use the attached Mbonambi_Trust_Report.docx as the primary source for factual content.
+🎨 Draw design and layout inspiration from: 
+- https://www.riotinto.com/en
+- https://www.transnet.net/
+- https://www.nefcorp.co.za/
+
+✍️ Each page should include:
+- A compelling header/title
+- A short introductory paragraph
+- Clearly labeled sections/subheadings (use a structure like Overview, Vision, Activities, Projects, Leadership, Partners, etc.)
+- A tone that is professional, clear, and community-focused
+- Use factual info from the report (e.g. 11.25% equity for CDT, R31M road projects, names of trustees like Martin Mbuyazi, etc.)
+- Avoid internal political drama; focus on achievements, goals, and partnerships.
+
+📦 Format the output in Markdown.
+
+🔐 Do not include any protected or sensitive admin-only content.
+
+Target audience: community members, partners, and the general public.
+
+Generate clean, generic content templates that the team can later expand or update.     "Mbonambi Community Trust Structure & Governance Overview
+💼 Executive Summary
+The Mbonambi Community Trust ecosystem is a complex but well-structured network of entities and stakeholders formed in 2009 following the 24% B-BBEE equity transaction by Richards Bay Minerals (RBM). The community, deeply rooted in Zulu heritage and blacksmithing legacy, is represented by various trusts designed to manage corporate shareholding, deliver development, and preserve traditional governance.
+📅 Timeline: Key Milestones (2009–2025)
+•	2009 — Empowerment structure formed through Blue Horizon Investments 41 (Pty) Ltd, which received 24% of RBM.
+•	2010 — CDT founder Inkosi Sibusiso Mbuyazi removed as traditional leader.
+•	2012 — Trust payouts delayed due to leadership and legal disputes.
+•	2016 — Martin Mbuyazi appointed interim administrator by KZN Premier.
+•	2019 — RBM begins reform push; funding frozen pending governance overhaul.
+•	2021 — DMRE orders release of trust funds for public benefit.
+•	2022 — Community infrastructure projects resumed.
+•	2024 — RBM reports R249M invested across four communities.
+•	2025 — Court affirms Mbonambi community representation via CDT/PBT under Martin Mbuyazi.
+🧱 Trust Structure (Organogram)
+[Empowerment Trust]
+   |
+-----------------------------------------------
+   |                                              |
+[Community Development Trust]       [Public Benefit Trust]
+(Holds 11.25% equity)              (Delivers development projects)
+📄 Community Development Trust (CDT)
+Function: Holds 11.25% shares in Blue Horizon Investments.
+Role: Represents the Mbonambi community in governance and economic participation.
+Legal Focus: Land rights, community representation, equity oversight.
+Key Trustees/Leaders:
+- Martin Mbuyazi (Chair, administrator)
+- Lulama Cele-Boughey (Secretary)
+- Thandiwe Mafuleka (Past Trustee)
+🏦 Public Benefit Trust (PBT)
+Function: Implements benefit programs for the Mbonambi community.
+Projects:
+- R31M — Roadway upgrades
+- R11.5M — Elevated reservoir construction
+- R2M — Furniture & upholstery workshop
+Contractors:
+- Andisa FT — R7.3M for school ablutions
+- Blackbird Advisory — R3.8M consulting
+Key Administrators:
+- Martin Mbuyazi (Appointed by KZN Premier)
+🔰 Empowerment Trust
+Established: 2009
+Parent Trust managing CDT and PBT
+Purpose: Oversight and coordination of the B-BBEE transaction and development objectives.
+Directors/Stakeholders:
+- Manne Dipico (Director, ex-Premier)
+- Nhlanhla Gasa (Deceased, early director)
+📈 Key Corporate Stakeholders & Partners
+•	Blue Horizon Investments 41 (Pty) Ltd — Empowerment consortium owning 24% of RBM shares
+•	RBM / Rio Tinto — Mining operator; BEE partner
+•	DMRE — Government authority ensuring compliance & fund release
+•	Unitrans & Ivysea 15 — JV partners in Ubunye Mining Services, transport arm
+•	Siyaqhubeka Forests — Forestry JV with Mondi under traditional authority
+👨‍👩‍👦 Community Leadership & Governance
+Traditional Authority:
+- Inkosi Mkhanyiseni Mbuyazi — Installed traditional leader
+- Inkosi Sibusiso Mbuyazi (Deceased) — Former Inkosi, removed 2010
+Administrative Authority:
+- Martin Mbuyazi — Appointed administrator of CDT and PBT (KZN Premier's office)
+🔗 Community Partnerships Section (for Website)
+Community	Location	Status
+Mbonambi	King Cetshwayo District	Hosts CDT, PBT, Empowerment Trust lead
+Dube	uMhlathuze	CDT & PBT under Blue Horizon
+Sokhulu	North of Richards Bay	Empowerment Trust stakeholder
+Mkhwanazi	KwaMbonambi	Partner in land & infrastructure development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corporate & Project Stakeholder Map
+scss
+CopyEdit
+      [Empowerment Trust]
+               │
+   ┌───────────┴───────────┐
+   │                       │
+[CDT]                    [PBT]
+   │                       │
+   │                       ├──Road Upgrades (R31 M)
+   └──11.25% in            ├──Reservoir (R11.5 M)
+        Blue Horizon 41    ├──Furniture Program (R2 M)
+                          └──School Ablutions (R7.3 M via Andisa FT)
+Key Corporate Vehicles
+•	Blue Horizon Investments 41 (Pty) Ltd – holds 24% RBM → 11.25% CDT
+•	Ubunye Mining Services – JV (Unitrans + Ivysea 15) for transport (est. 2015)
+•	Siyaqhubeka Forests & Property Trust – Tribal land assets (Martin controls)
+•	Blackbird Advisory – Financial consultants to the trusts
+•	Andisa FT – Owned by Fundi Dlamini; delivered school ablutions (R7.3 M)
+•	RBM / Rio Tinto – Mining operator, original 24% seller, governance enforcer
+•	DMRE – Regulator, compelled 2021 fund release
+
+
+
+
+
+Leadership & Trustee Organogram
+Empowerment Trust (Parent)
+•	Martin Mbuyazi – Chair, Empowerment Trust; ultimate oversight of CDT & PBT
+•	Lulama Cele Boughey – COO, Empowerment Trust; day to day operations
+•	Manne Dipico – Non exec Trustee, Empowerment Trust; governance advisor
+•	Mkhanyiseni Nzama – Trustee, Empowerment Trust; strategic planning
+•	Nhlanhla Gasa – Trustee Emeritus (historical advisor; founder role)
+•	Judia Khoza – Trustee, Empowerment Trust (admin/secretariat)
+•	Palesa Mthembu – Trustee, Empowerment Trust (finance oversight)
+Community Development Trust (CDT)
+•	Martin Mbuyazi – Chair, CDT
+•	Lulama Cele Boughey – Secretary, CDT
+•	Fundi Dlamini – Finance Lead, CDT (Andisa FT liaison)
+•	[Vacant seat] – Land rights & legal counsel (to be appointed)
+Public Benefit Trust (PBT)
+•	Martin Mbuyazi – Chair, PBT
+•	Lulama Cele Boughey – Project Director, PBT
+•	Fundi Dlamini – Education & Infrastructure Lead
+•	Blackbird Advisory – External Financial Consultant 
+•	DMRE Liaison Officer – (govt rep; rotates annually)
+
+
+"

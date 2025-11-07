@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -30,13 +29,13 @@ const CommunityPhotoGallery = () => {
   ];
 
   return (
-    <section className="py-20 bg-sandstone-50">
+    <section className="py-20 bg-mbonambi-lightGray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-mbonambi-darkGray mb-6">
             {t('home.gallery.sectionTitle', 'Community Life')}
           </h2>
-          <p className="text-lg text-navy-600 max-w-2xl mx-auto">
+          <p className="text-lg text-mbonambi-darkGray max-w-2xl mx-auto">
             {t('home.gallery.sectionDesc', 'Visual stories of our heritage, celebrations, and progress as a united community')}
           </p>
         </div>
@@ -64,7 +63,7 @@ const CommunityPhotoGallery = () => {
         <div className="text-center">
           <Link 
             to="/gallery"
-            className="inline-block bg-forest-600 hover:bg-forest-700 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+            className="inline-block bg-mbonambi-mauve hover:bg-mbonambi-mauve/80 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
           >
             {t('home.gallery.viewAllButton', 'View Full Gallery')}
           </Link>

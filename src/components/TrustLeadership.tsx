@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { User, Crown } from 'lucide-react';
 
 const TrustLeadership = () => {
@@ -40,13 +39,13 @@ const TrustLeadership = () => {
   ];
 
   return (
-    <section className="py-16 bg-sandstone-50">
+    <section className="py-16 bg-mbonambi-lightGray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-mbonambi-darkGray mb-4">
             Trust Leadership
           </h2>
-          <p className="text-navy-600 text-lg max-w-2xl mx-auto">
+          <p className="text-mbonambi-mediumGray text-lg max-w-2xl mx-auto">
             Meet the dedicated individuals who have guided the Trust's mission of community empowerment
           </p>
         </div>
@@ -58,35 +57,35 @@ const TrustLeadership = () => {
               <div 
                 key={index}
                 className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 ${
-                  leader.isFounder ? 'border-2 border-forest-200' : ''
+                  leader.isFounder ? 'border-2 border-mbonambi-mauve' : ''
                 }`}
               >
                 <div className="p-6">
                   <div className="flex items-center mb-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${
-                      leader.isFounder ? 'bg-forest-100' : 'bg-navy-100'
+                      leader.isFounder ? 'bg-mbonambi-mauve/20' : 'bg-mbonambi-lightGray'
                     }`}>
                       <IconComponent className={`w-6 h-6 ${
-                        leader.isFounder ? 'text-forest-600' : 'text-navy-600'
+                        leader.isFounder ? 'text-mbonambi-mauve' : 'text-mbonambi-mediumGray'
                       }`} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-navy-800 text-xl">{leader.name}</h3>
+                      <h3 className="font-semibold text-mbonambi-darkGray text-xl">{leader.name}</h3>
                       <p className={`text-sm font-medium ${
-                        leader.isFounder ? 'text-forest-600' : 'text-navy-600'
+                        leader.isFounder ? 'text-mbonambi-mauve' : 'text-mbonambi-mediumGray'
                       }`}>
                         {leader.role} • {leader.period}
                       </p>
                     </div>
                   </div>
                   
-                  <p className="text-navy-600 leading-relaxed">
+                  <p className="text-mbonambi-mediumGray leading-relaxed">
                     {leader.description}
                   </p>
                   
                   {leader.isFounder && (
-                    <div className="mt-4 p-3 bg-forest-50 rounded-lg">
-                      <p className="text-sm text-forest-700 font-medium">
+                    <div className="mt-4 p-3 bg-mbonambi-mauve/10 rounded-lg">
+                      <p className="text-sm text-mbonambi-mauve font-medium">
                         🌟 Founding Father - His legacy continues to guide our mission
                       </p>
                     </div>

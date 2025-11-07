@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Spline from '@splinetool/react-spline';
 import type { Application } from '@splinetool/runtime';
@@ -64,7 +64,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="h-screen bg-theme text-white relative overflow-hidden flex flex-col justify-end pb-24">
+    <section ref={sectionRef} className="h-screen bg-mbonambi-darkGray text-white relative overflow-hidden flex flex-col justify-end pb-24">
       {/* Background Spline Animation */}
       <div className="absolute inset-0 w-full h-full">
         <Spline
@@ -86,7 +86,7 @@ const AboutSection = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <IconComponent className="w-10 h-10 text-sandstone-300" />
+              <IconComponent className="w-10 h-10 text-mbonambi-mauve" />
             </motion.div>
           );
         })}
@@ -114,12 +114,12 @@ const AboutSection = () => {
                 <X size={24} />
               </button>
               <div className="w-24 h-24 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <selectedFeature.icon className="w-12 h-12 text-sandstone-300" />
+                <selectedFeature.icon className="w-12 h-12 text-mbonambi-mauve" />
               </div>
               <h3 className="font-semibold text-2xl text-white mb-4">
                 {selectedFeature.title}
               </h3>
-              <p className="text-sandstone-200 text-lg">
+              <p className="text-mbonambi-lightGray text-lg">
                 {selectedFeature.description}
               </p>
             </motion.div>

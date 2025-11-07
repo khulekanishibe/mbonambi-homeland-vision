@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 
 const UpcomingEvents = () => {
@@ -57,11 +56,11 @@ const UpcomingEvents = () => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case 'Meeting': return 'bg-navy-100 text-navy-700';
-      case 'Cultural': return 'bg-forest-100 text-forest-700';
-      case 'Education': return 'bg-purple-100 text-purple-700';
-      case 'Development': return 'bg-orange-100 text-orange-700';
-      default: return 'bg-gray-100 text-gray-700';
+      case 'Meeting': return 'bg-mbonambi-lightGray text-mbonambi-darkGray';
+      case 'Cultural': return 'bg-mbonambi-lightGray text-mbonambi-darkGray';
+      case 'Education': return 'bg-mbonambi-lightGray text-mbonambi-darkGray';
+      case 'Development': return 'bg-mbonambi-lightGray text-mbonambi-darkGray';
+      default: return 'bg-mbonambi-lightGray text-mbonambi-darkGray';
     }
   };
 
@@ -69,10 +68,10 @@ const UpcomingEvents = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-mbonambi-darkGray mb-4">
             Upcoming Events
           </h2>
-          <p className="text-navy-600 text-lg max-w-2xl mx-auto">
+          <p className="text-mbonambi-mediumGray text-lg max-w-2xl mx-auto">
             Mark your calendar for these important community gatherings and celebrations
           </p>
         </div>
@@ -84,37 +83,37 @@ const UpcomingEvents = () => {
               className={`p-6 rounded-lg border-l-4 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 ${getPriorityColor(event.priority)}`}
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="font-semibold text-navy-800 text-lg">{event.title}</h3>
+                <h3 className="font-semibold text-mbonambi-darkGray text-lg">{event.title}</h3>
                 <span className={`px-2 py-1 rounded text-xs font-medium ${getCategoryColor(event.category)}`}>
                   {event.category}
                 </span>
               </div>
               
               <div className="space-y-2 mb-4">
-                <div className="flex items-center text-sm text-navy-600">
+                <div className="flex items-center text-sm text-mbonambi-mediumGray">
                   <Calendar className="w-4 h-4 mr-2" />
                   {event.date}
                 </div>
-                <div className="flex items-center text-sm text-navy-600">
+                <div className="flex items-center text-sm text-mbonambi-mediumGray">
                   <Clock className="w-4 h-4 mr-2" />
                   {event.time}
                 </div>
-                <div className="flex items-center text-sm text-navy-600">
+                <div className="flex items-center text-sm text-mbonambi-mediumGray">
                   <MapPin className="w-4 h-4 mr-2" />
                   {event.location}
                 </div>
-                <div className="flex items-center text-sm text-navy-600">
+                <div className="flex items-center text-sm text-mbonambi-mediumGray">
                   <Users className="w-4 h-4 mr-2" />
                   {event.attendees}
                 </div>
               </div>
               
-              <p className="text-navy-600 text-sm leading-relaxed">
+              <p className="text-mbonambi-mediumGray text-sm leading-relaxed">
                 {event.description}
               </p>
               
               <div className="mt-4">
-                <button className="bg-navy-700 hover:bg-navy-800 text-white px-4 py-2 rounded text-sm font-medium transition-colors duration-300">
+                <button className="bg-mbonambi-mauve hover:bg-mbonambi-mauve/80 text-white px-4 py-2 rounded text-sm font-medium transition-colors duration-300">
                   Register Interest
                 </button>
               </div>

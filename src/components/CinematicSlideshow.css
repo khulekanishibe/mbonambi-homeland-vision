@@ -1,0 +1,180 @@
+/* Cinematic slideshow animations */
+
+@keyframes ken-burns {
+  0% { 
+    transform: scale(1.1) translateX(-2%);
+  }
+  100% { 
+    transform: scale(1.3) translateX(2%);
+  }
+}
+
+@keyframes pan-right {
+  0% { 
+    transform: scale(1.2) translateX(-5%);
+  }
+  100% { 
+    transform: scale(1.1) translateX(3%);
+  }
+}
+
+@keyframes pan-left {
+  0% { 
+    transform: scale(1.2) translateX(5%);
+  }
+  100% { 
+    transform: scale(1.1) translateX(-3%);
+  }
+}
+
+@keyframes dramatic-zoom {
+  0% { 
+    transform: scale(1.0) translateY(3%);
+  }
+  100% { 
+    transform: scale(1.4) translateY(-2%);
+  }
+}
+
+@keyframes aerial-descent {
+  0% { 
+    transform: scale(1.3) translateY(-3%);
+  }
+  100% { 
+    transform: scale(1.1) translateY(1%);
+  }
+}
+
+@keyframes zoom-out {
+  0% { 
+    transform: scale(1.4) rotate(1deg);
+  }
+  100% { 
+    transform: scale(1.1) rotate(-0.5deg);
+  }
+}
+
+@keyframes focus-pull {
+  0% { 
+    transform: scale(1.1);
+    filter: blur(1px);
+  }
+  50% { 
+    transform: scale(1.25);
+    filter: blur(0px);
+  }
+  100% { 
+    transform: scale(1.2);
+    filter: blur(0px);
+  }
+}
+
+/* Animation utility classes */
+.animate-ken-burns {
+  animation: ken-burns 8s ease-in-out forwards;
+}
+
+.animate-pan-right {
+  animation: pan-right 8s ease-in-out forwards;
+}
+
+.animate-pan-left {
+  animation: pan-left 8s ease-in-out forwards;
+}
+
+.animate-dramatic-zoom {
+  animation: dramatic-zoom 8s ease-in-out forwards;
+}
+
+.animate-aerial-descent {
+  animation: aerial-descent 8s ease-in-out forwards;
+}
+
+.animate-zoom-out {
+  animation: zoom-out 8s ease-in-out forwards;
+}
+
+.animate-focus-pull {
+  animation: focus-pull 8s ease-in-out forwards;
+}
+
+/* Progress bar animation */
+@keyframes progressBar {
+  from { 
+    width: 0%; 
+  }
+  to { 
+    width: 100%; 
+  }
+}
+
+.animate-progress {
+  animation: progressBar 8s linear;
+}
+
+/* Enhanced cinematic effects */
+.cinematic-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.2) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  @keyframes ken-burns {
+    0% { 
+      transform: scale(1.05) translateX(-1%);
+    }
+    100% { 
+      transform: scale(1.2) translateX(1%);
+    }
+  }
+
+  @keyframes dramatic-zoom {
+    0% { 
+      transform: scale(1.0) translateY(2%);
+    }
+    100% { 
+      transform: scale(1.3) translateY(-1%);
+    }
+  }
+
+  @keyframes aerial-descent {
+    0% { 
+      transform: scale(1.2) translateY(-2%);
+    }
+    100% { 
+      transform: scale(1.05) translateY(1%);
+    }
+  }
+}
+
+/* Smooth transitions for better performance */
+.cinematic-slide {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Loading state */
+.cinematic-slide-loading {
+  background: linear-gradient(
+    45deg,
+    rgba(139, 125, 108, 0.1) 0%,
+    rgba(139, 125, 108, 0.2) 50%,
+    rgba(139, 125, 108, 0.1) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

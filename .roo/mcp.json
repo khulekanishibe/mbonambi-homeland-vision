@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "sequentialthinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "imagesorcery-mcp": {
+      "command": "C:\\Users\\yondi\\OneDrive\\Documents\\GitHub\\mbonambi-homeland-vision\\venv\\Scripts\\imagesorcery-mcp.exe",
+      "timeout": 600,
+      "alwaysAllow": [
+        "get_metainfo",
+        "list_models"
+      ]
+    }
+  }
+}
