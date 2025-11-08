@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { Calendar, AlertCircle, FileText } from 'lucide-react';
 
 const AnnouncementsSection = () => {

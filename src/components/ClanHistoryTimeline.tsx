@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flame, Shield, Swords, Scale, HandHeart, Crown, Hammer, Trophy, Building, ChevronDown, Sparkles } from 'lucide-react';
+import { Shield, Swords, Scale, HandHeart, Hammer, Trophy, Building } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const ClanHistoryTimeline = () => {

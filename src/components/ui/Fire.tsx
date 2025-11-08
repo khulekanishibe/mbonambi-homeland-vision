@@ -1,4 +1,3 @@
-import React from 'react';
 import './Fire.css';
 
 const Fire = () => (
