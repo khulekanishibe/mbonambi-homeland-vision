@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { Calendar, Handshake, Award, Users } from 'lucide-react';
 
 const TrustHistory = () => {

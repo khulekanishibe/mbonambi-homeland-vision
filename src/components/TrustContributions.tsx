@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { GraduationCap, Building, Leaf, Heart } from 'lucide-react';
 
 const TrustContributions = () => {

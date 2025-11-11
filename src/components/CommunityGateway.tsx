@@ -1,7 +1,5 @@
-
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Camera, Heart, Users } from 'lucide-react';
+import { Calendar, Camera, Users } from 'lucide-react';
 
 const CommunityGateway = () => {
   const gateways = [

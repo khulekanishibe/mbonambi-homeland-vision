@@ -1,10 +1,7 @@
-
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Calendar, Scale, Users, Handshake, FileText, ArrowRight, AlertTriangle } from 'lucide-react';
+import { Calendar, Scale, Users, Handshake, FileText, AlertTriangle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
-import { Button } from './ui/button';
 
 const CommunityAnnouncements = () => {
   const { t } = useTranslation();

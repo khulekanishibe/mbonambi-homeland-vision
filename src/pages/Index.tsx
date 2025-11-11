@@ -1,4 +1,3 @@
-import React from 'react';
 import MegaMenu from '../components/MegaMenu';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
