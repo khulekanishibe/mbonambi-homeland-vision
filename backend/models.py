@@ -31,6 +31,29 @@ class ResourceCategory(str, Enum):
     MATERIALS = "materials"
     KNOWLEDGE = "knowledge"
 
+class DocumentCategory(str, Enum):
+    FINANCIAL_STATEMENT = "financial_statement"
+    ANNUAL_REPORT = "annual_report"
+    QUARTERLY_REPORT = "quarterly_report"
+    GOVERNANCE_POLICY = "governance_policy"
+    MEETING_MINUTES = "meeting_minutes"
+    PROGRAMME_POLICY = "programme_policy"
+    APPLICATION_FORM = "application_form"
+    OTHER = "other"
+
+class ProgrammeTheme(str, Enum):
+    EDUCATION = "education"
+    SMME_SUPPORT = "smme_support"
+    WELFARE = "welfare"
+    SPORTS_CULTURE = "sports_culture"
+    LAND_HOUSING = "land_housing"
+    NPO_SUPPORT = "npo_support"
+
+class TenderStatus(str, Enum):
+    OPEN = "open"
+    CLOSED = "closed"
+    AWARDED = "awarded"
+
 # User Models
 class UserBase(BaseModel):
     email: EmailStr
@@ -198,4 +221,62 @@ class NewsletterSubscriber(BaseModel):
     email: EmailStr
     name: Optional[str] = None
     subscribed_at: datetime = Field(default_factory=datetime.utcnow)
+    is_active: bool = True
+
+# Document Models (Transparency Portal)
+class DocumentBase(BaseModel):
+    title: str
+    description: str
+    category: DocumentCategory
+    file_url: str
+    programme_theme: Optional[ProgrammeTheme] = None
+    tags: Optional[List[str]] = []
+
+class DocumentCreate(DocumentBase):
+    pass
+
+class DocumentUpdate(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    category: Optional[DocumentCategory] = None
+    file_url: Optional[str] = None
+    programme_theme: Optional[ProgrammeTheme] = None
+    tags: Optional[List[str]] = None
+
+class Document(DocumentBase):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_by: str
+    is_active: bool = True
+
+# Tender Models (Procurement Portal)
+class TenderBase(BaseModel):
+    title: str
+    reference_number: str
+    description: str
+    document_url: str
+    opening_date: datetime
+    closing_date: datetime
+    status: TenderStatus = TenderStatus.OPEN
+    awarded_to: Optional[str] = None
+    award_value_zar: Optional[float] = None
+
+class TenderCreate(TenderBase):
+    pass
+
+class TenderUpdate(BaseModel):
+    title: Optional[str] = None
+    reference_number: Optional[str] = None
+    description: Optional[str] = None
+    document_url: Optional[str] = None
+    opening_date: Optional[datetime] = None
+    closing_date: Optional[datetime] = None
+    status: Optional[TenderStatus] = None
+    awarded_to: Optional[str] = None
+    award_value_zar: Optional[float] = None
+
+class Tender(TenderBase):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: datetime = Field(default_factory=datetime.utcnow)
+    created_by: str
     is_active: bool = True

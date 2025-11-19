@@ -11,6 +11,8 @@ from routes.auth_routes import router as auth_router
 from routes.events_routes import router as events_router
 from routes.news_routes import router as news_router
 from routes.resources_routes import router as resources_router
+from routes.documents_routes import router as documents_router
+from routes.tenders_routes import router as tenders_router
 from routes.gallery_routes import router as gallery_router
 from routes.newsletter_routes import router as newsletter_router
 
@@ -50,7 +52,9 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(events_router)
 app.include_router(news_router)
-app.include_router(resources_router)
+app.include_router(resources_router)  # Legacy - kept for backward compatibility
+app.include_router(documents_router)  # New transparency portal
+app.include_router(tenders_router)    # New procurement portal
 app.include_router(gallery_router)
 app.include_router(newsletter_router)
 
