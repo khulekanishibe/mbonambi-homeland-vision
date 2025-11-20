@@ -64,6 +64,7 @@ const menuItems: MenuItem[] = [
             { id: 'stakeholder-reports', label: 'Quarterly Reports', href: '/stakeholders/reports' },
             { id: 'governance', label: 'Governance', href: '/stakeholders/governance' },
             { id: 'stakeholder-announcements', label: 'Announcements', href: '/stakeholders/announcements' },
+            { id: 'transparency', label: 'Transparency Portal', href: '/transparency' },
         ]
     },
     {
