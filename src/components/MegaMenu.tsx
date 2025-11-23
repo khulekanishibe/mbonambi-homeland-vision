@@ -1,7 +1,7 @@
 // "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Menu, X, Users, Building, Handshake, Camera, Phone } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X, Users, Building, Handshake, Camera, Phone, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
@@ -65,6 +65,7 @@ const menuItems: MenuItem[] = [
             { id: 'governance', label: 'Governance', href: '/stakeholders/governance' },
             { id: 'stakeholder-announcements', label: 'Announcements', href: '/stakeholders/announcements' },
             { id: 'transparency', label: 'Transparency Portal', href: '/transparency' },
+            { id: 'tenders', label: 'Tenders & Procurement', href: '/tenders', icon: Briefcase },
         ]
     },
     {
