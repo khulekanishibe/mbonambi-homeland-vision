@@ -7,7 +7,22 @@
   "contact": "Contact",
   "gallery": "Gallery",
   "events": "Events",
+  "tenders": "Tenders",
+  "programmes": "Programmes",
+  "transparency": "Transparency Portal",
+  "ourHeritage": "Our Heritage",
   "welcome": "Welcome to the Mbonambi Community",
+  "navigation": {
+    "tenders": "Tenders & Procurement",
+    "programmes": "Community Programmes",
+    "transparency": "Transparency Portal",
+    "ourHeritage": "Our Heritage",
+    "announcements": "Trust Announcements",
+    "aboutUs": "About Us",
+    "clanHistory": "Clan History",
+    "leadership": "Leadership",
+    "trustEcosystem": "Trust Ecosystem"
+  },
   "hero": {
     "title": "Mbonambi Community",
     "subtitle": "Guardians of Our Land, Partners in Progress",

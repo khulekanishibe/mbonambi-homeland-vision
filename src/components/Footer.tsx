@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,25 +8,26 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <h3 className="font-heading text-2xl font-bold mb-6">
-              Mbonambi Community
+              Mbonambi Community Trust
             </h3>
             <p className="text-navy-200 mb-6 leading-relaxed">
-              Guardians of Our Land, Partners in Progress. The Mbonambi people continue their legacy 
-              of craftsmanship, unity, and resilience from KwaMbonambi - "Place of the Mbonambi."
+              Guardians of Our Land, Partners in Progress. Building a sustainable future through 
+              transparent governance, economic empowerment, and community development.
             </p>
             <div className="text-sandstone-300 text-sm">
-              Honoring the legacy of our ancestors • Building for future generations
+              Honoring our heritage • Building our future
             </div>
           </div>
 
           <div>
             <h4 className="font-semibold text-xl mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#about" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">About Our Clan</a></li>
-              <li><a href="#history" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Clan History</a></li>
-              <li><a href="#trusts" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Community Trusts</a></li>
-              <li><a href="#events" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Events & Announcements</a></li>
-              <li><a href="#gallery" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Photo Gallery</a></li>
+              <li><Link to="/tenders" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Tenders & Procurement</Link></li>
+              <li><Link to="/programmes" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Community Programmes</Link></li>
+              <li><Link to="/transparency" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Transparency Portal</Link></li>
+              <li><Link to="/#announcements" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Announcements</Link></li>
+              <li><Link to="/gallery" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Gallery</Link></li>
+              <li><Link to="/trust" className="text-navy-200 hover:text-sandstone-300 transition-colors duration-300">Trust Overview</Link></li>
             </ul>
           </div>
 
@@ -51,8 +53,8 @@ const Footer = () => {
             </div>
             <div className="mt-6 p-4 bg-black/20 rounded-lg">
               <p className="text-sm text-sandstone-200">
-                Community members are encouraged to participate in meetings, cultural events, 
-                and development initiatives that strengthen our collective future.
+                Community members are encouraged to participate in trust activities, apply for programmes, 
+                and engage with transparency initiatives.
               </p>
             </div>
           </div>
@@ -60,8 +62,8 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="text-navy-300 text-sm">
-            © 2024 Mbonambi Community. All rights reserved. | 
-            <span className="text-sandstone-300 ml-2">Heritage • Unity • Progress</span>
+            © 2024 Mbonambi Community Trust. All rights reserved. | 
+            <span className="text-sandstone-300 ml-2">Transparency • Empowerment • Progress</span>
           </p>
         </div>
       </div>
