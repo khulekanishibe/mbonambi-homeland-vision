@@ -7,7 +7,22 @@
   "contact": "Xhumana Nathi",
   "gallery": "Igalari",
   "events": "Imicimbi",
+  "tenders": "Amathenda",
+  "programmes": "Izinhlelo Zomphakathi",
+  "transparency": "Ithrasprensisina",
+  "ourHeritage": "Ifa Lethu",
   "welcome": "Siyakwamukela eMphakathini wakwaMbonambi",
+  "navigation": {
+    "tenders": "Amathenda Nokuthenga",
+    "programmes": "Izinhlelo Zomphakathi",
+    "transparency": "Ithrasprensisina",
+    "ourHeritage": "Ifa Lethu",
+    "announcements": "Izaziso Zethrasethi",
+    "aboutUs": "Mayelana Nathi",
+    "clanHistory": "Umlando Wesizwe",
+    "leadership": "Ubuholi",
+    "trustEcosystem": "Isistimu Yethrasethi"
+  },
   "hero": {
     "title": "Umphakathi waseMbonambi",
     "subtitle": "Abalindi Bomhlaba Wethu, Ozakwethu Ekuthuthukiseni",
