@@ -1,7 +1,7 @@
 // "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Menu, X, Users, Building, Handshake, Camera, Phone, Briefcase } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X, Users, Building, Handshake, Camera, Phone, Briefcase, Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 
@@ -54,6 +54,7 @@ const menuItems: MenuItem[] = [
                 ]
             },
             { id: 'land-trust', label: 'Land Trust', href: '/trust/land' },
+            { id: 'programmes', label: 'Community Programmes', href: '/programmes', icon: Heart },
         ]
     },
     {
