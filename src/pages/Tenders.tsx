@@ -8,6 +8,7 @@ import { FileText, Download, Calendar, Building2, Award, Clock } from "lucide-re
 import { format, parseISO, differenceInHours } from "date-fns";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useTranslation } from 'react-i18next';
 
 export type TenderStatus = 'OPEN' | 'CLOSED' | 'AWARDED';
 
@@ -39,15 +40,15 @@ const fetchTenders = async (status?: TenderStatus): Promise<Tender[]> => {
   return response.json();
 };
 
-const TenderCard = ({ tender }: { tender: Tender }) => {
+const TenderCard = ({ tender, t }: { tender: Tender; t: any }) => {
   const closingDate = parseISO(tender.closing_date);
   const hoursUntilClose = differenceInHours(closingDate, new Date());
   const isClosingSoon = tender.status === 'OPEN' && hoursUntilClose > 0 && hoursUntilClose < 48;
 
   const statusConfig = {
-    OPEN: { color: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20", label: "Open" },
-    CLOSED: { color: "bg-slate-500/10 text-slate-700 dark:text-slate-400 border-slate-500/20", label: "Closed" },
-    AWARDED: { color: "bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20", label: "Awarded" }
+    OPEN: { color: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-500/20", label: t('tenders.status.open') },
+    CLOSED: { color: "bg-slate-500/10 text-slate-700 dark:text-slate-400 border-slate-500/20", label: t('tenders.status.closed') },
+    AWARDED: { color: "bg-blue-500/10 text-blue-700 dark:text-blue-400 border-blue-500/20", label: t('tenders.status.awarded') }
   };
 
   return (
@@ -76,17 +77,17 @@ const TenderCard = ({ tender }: { tender: Tender }) => {
         <div className="space-y-2 text-sm">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Calendar className="h-4 w-4" />
-            <span className="text-xs">Opens: {format(parseISO(tender.opening_date), 'PPP')}</span>
+            <span className="text-xs">{t('tenders.labels.opens')}: {format(parseISO(tender.opening_date), 'PPP')}</span>
           </div>
           
           <div className="flex items-center gap-2">
             <Clock className="h-4 w-4" />
             <span className={`text-xs font-medium ${isClosingSoon ? 'text-destructive' : 'text-muted-foreground'}`}>
-              Closes: {format(closingDate, 'PPP')}
+              {t('tenders.labels.closes')}: {format(closingDate, 'PPP')}
             </span>
             {isClosingSoon && (
               <Badge variant="destructive" className="text-xs py-0">
-                Closing Soon
+                {t('tenders.labels.closingSoon')}
               </Badge>
             )}
           </div>
@@ -98,12 +99,12 @@ const TenderCard = ({ tender }: { tender: Tender }) => {
               <Award className="h-4 w-4 text-blue-600 dark:text-blue-400 mt-0.5" />
               <div className="flex-1">
                 <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">
-                  Contract Awarded
+                  {t('tenders.labels.contractAwarded')}
                 </p>
                 <p className="text-sm font-medium">{tender.awarded_to}</p>
                 {tender.award_value_zar && (
                   <p className="text-xs text-muted-foreground mt-1">
-                    Value: R {tender.award_value_zar.toLocaleString('en-ZA')}
+                    {t('tenders.labels.value')}: R {tender.award_value_zar.toLocaleString('en-ZA')}
                   </p>
                 )}
               </div>
@@ -119,13 +120,13 @@ const TenderCard = ({ tender }: { tender: Tender }) => {
             onClick={() => window.open(tender.document_url, '_blank')}
           >
             <Download className="h-4 w-4" />
-            Download Specifications
+            {t('tenders.actions.downloadSpecs')}
           </Button>
         )}
         
         {tender.status === 'CLOSED' && (
           <Button className="w-full" disabled variant="outline">
-            Submissions Closed
+            {t('tenders.actions.submissionsClosed')}
           </Button>
         )}
       </CardFooter>
@@ -134,6 +135,7 @@ const TenderCard = ({ tender }: { tender: Tender }) => {
 };
 
 const Tenders = () => {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'open' | 'closed' | 'awarded'>('open');
 
   const { data: openTenders, isLoading: loadingOpen, error: errorOpen } = useQuery({
@@ -164,7 +166,7 @@ const Tenders = () => {
         <div className="flex items-center justify-center py-12">
           <div className="flex flex-col items-center gap-2">
             <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-            <p className="text-sm text-muted-foreground">Loading tenders...</p>
+            <p className="text-sm text-muted-foreground">{t('tenders.loading')}</p>
           </div>
         </div>
       );
@@ -174,9 +176,9 @@ const Tenders = () => {
       return (
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <FileText className="h-12 w-12 text-muted-foreground/50 mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Unable to Load Tenders</h3>
+          <h3 className="text-lg font-semibold mb-2">{t('tenders.error.title')}</h3>
           <p className="text-sm text-muted-foreground max-w-md mb-4">
-            There was an error connecting to the server. Please ensure the backend is running.
+            {t('tenders.error.message')}
           </p>
           <code className="text-xs bg-muted px-2 py-1 rounded">{error.message}</code>
         </div>
@@ -187,7 +189,7 @@ const Tenders = () => {
       return (
         <div className="flex flex-col items-center justify-center py-12 text-center">
           <FileText className="h-12 w-12 text-muted-foreground/50 mb-4" />
-          <h3 className="text-lg font-semibold mb-2">No Tenders Available</h3>
+          <h3 className="text-lg font-semibold mb-2">{t('tenders.emptyState.title')}</h3>
           <p className="text-sm text-muted-foreground max-w-md">
             {emptyMessage}
           </p>
@@ -198,7 +200,7 @@ const Tenders = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tenders.map((tender) => (
-          <TenderCard key={tender.id} tender={tender} />
+          <TenderCard key={tender.id} tender={tender} t={t} />
         ))}
       </div>
     );
@@ -212,10 +214,10 @@ const Tenders = () => {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Procurement & Tenders
+            {t('tenders.title')}
           </h1>
           <p className="text-lg text-muted-foreground">
-            Current business opportunities and contract awards from the Mbonambi Community Trust
+            {t('tenders.subtitle')}
           </p>
         </div>
 
@@ -224,15 +226,15 @@ const Tenders = () => {
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
             <TabsTrigger value="open" className="gap-2">
               <Clock className="h-4 w-4" />
-              Open
+              {t('tenders.tabs.open')}
             </TabsTrigger>
             <TabsTrigger value="closed" className="gap-2">
               <FileText className="h-4 w-4" />
-              Closed
+              {t('tenders.tabs.closed')}
             </TabsTrigger>
             <TabsTrigger value="awarded" className="gap-2">
               <Award className="h-4 w-4" />
-              Awarded
+              {t('tenders.tabs.awarded')}
             </TabsTrigger>
           </TabsList>
 
@@ -241,7 +243,7 @@ const Tenders = () => {
               openTenders,
               loadingOpen,
               errorOpen,
-              "There are currently no open tender opportunities. Please check back later."
+              t('tenders.emptyState.open')
             )}
           </TabsContent>
 
@@ -250,7 +252,7 @@ const Tenders = () => {
               closedTenders,
               loadingClosed,
               errorClosed,
-              "There are no recently closed tenders."
+              t('tenders.emptyState.closed')
             )}
           </TabsContent>
 
@@ -259,7 +261,7 @@ const Tenders = () => {
               awardedTenders,
               loadingAwarded,
               errorAwarded,
-              "No tender awards have been published yet."
+              t('tenders.emptyState.awarded')
             )}
           </TabsContent>
         </Tabs>

@@ -27,5 +27,108 @@
     "title": "Umphakathi waseMbonambi",
     "subtitle": "Abalindi Bomhlaba Wethu, Ozakwethu Ekuthuthukiseni",
     "description": "Kusukela ezikhathini zasemandulo zobuciko bezandla kuya emzamweni wanamuhla, abantu baseMbonambi baqhubekisela phambili ifa labo lobuciko, ubunye, nokumelana nezimo."
+  },
+  "transparency": {
+    "title": "Ingosi Yobumfihlo",
+    "subtitle": "Ukufinyelela okuvulekile emibhalweni yezimali nokuphathwa kweMbonambi Trust. Sikholelwa ekusetshenzisweni okusobala emphakathini wethu.",
+    "tabs": {
+      "all": "Onke Amadokhumenti",
+      "financials": "Ezimali",
+      "governance": "Ukuphatha",
+      "meetings": "Imihlangano"
+    },
+    "categories": {
+      "financial_statement": "Isitetimende Sezimali",
+      "annual_report": "Umbiko Wonyaka",
+      "quarterly_report": "Umbiko Wekota",
+      "governance_policy": "Inqubomgomo Yokuphatha",
+      "meeting_minutes": "Iminithisi Yomhlangano",
+      "other": "Okunye"
+    },
+    "actions": {
+      "download": "Landa"
+    },
+    "loading": "Iyalayisha amadokhumenti...",
+    "error": "Kuhlulekile ukulayisha amadokhumenti. Sicela uqinisekise ukuthi iseva isebenza.",
+    "emptyState": "Awekho amadokhumenti atholakele kulesi sigaba.",
+    "showingCount": "Kubonisa idokhumenti elingu-{{count}}",
+    "showingCount_plural": "Kubonisa amadokhumenti angu-{{count}}"
+  },
+  "tenders": {
+    "title": "Ukuthenga Namathenda",
+    "subtitle": "Amathuba ebhizinisi yamanje nemiklomelo yezinkontileka kusuka eMbonambi Community Trust",
+    "tabs": {
+      "open": "Kuvuliwe",
+      "closed": "Kuvalile",
+      "awarded": "Kudluliselwe"
+    },
+    "status": {
+      "open": "Kuvuliwe",
+      "closed": "Kuvalile",
+      "awarded": "Kudluliselwe"
+    },
+    "labels": {
+      "opens": "Kuvulwa",
+      "closes": "Kuvalwa",
+      "closingSoon": "Kuyavalwa Maduze",
+      "contractAwarded": "Inkontileka Inikezwe",
+      "value": "Inani"
+    },
+    "actions": {
+      "downloadSpecs": "Landa Imininingwane",
+      "submissionsClosed": "Ukuhambisa Kuvalile"
+    },
+    "loading": "Iyalayisha amathenda...",
+    "error": {
+      "title": "Ayikwazanga Ukulayisha Amathenda",
+      "message": "Kube nephutha lokuqondisana neseva. Sicela uqinisekise ukuthi iseva isebenza."
+    },
+    "emptyState": {
+      "title": "Awekho Amathenda Atholakalayo",
+      "open": "Ayikho manje amathuba ethenda elivulekile. Sicela ubuye uhlole kamuva.",
+      "closed": "Ayikho amathenda asanda kuvalwa.",
+      "awarded": "Ayikho imiklomelo yethenda esishicilelwe."
+    }
+  },
+  "programmes": {
+    "title": "Izinhlelo Zokuthuthukiswa Komphakathi",
+    "subtitle": "Ukuqinisa umphakathi waseMbonambi ngemfundo, ibhizinisi, nokusekela inhlalakahle",
+    "sections": {
+      "education": {
+        "title": "Imfundo Nokuthuthukiswa Kwamakhono",
+        "description": "Ukusekela intsha yethu ngezifundo zemfundo ephakeme, ukuqeqeshwa kwemisebenzi, nezinhlelo zokuthuthukiswa kwamakhono ukwakha umphakathi onolwazi."
+      },
+      "agriculture": {
+        "title": "Ibhizinisi Nezolimo",
+        "description": "Ukuqinisa abalimi bendawo nosomabhizinisi ngokusekela ezolimo, izinsiza zezolimo, kanye nezinhlelo zokuthuthukiswa kwe-SMME ukukhuthaza ukukhula komnotho."
+      },
+      "welfare": {
+        "title": "Inhlalakahle Yomphakathi",
+        "description": "Ukuhlinzeka ngezinhlelo zokusekela umphakathi, izinhlelo zokuvikelwa kokudla, nezinsizakalo zokunakekelwa komphakathi ukuqinisekisa inhlalakahle yawo wonke amahlali aseMbonambi."
+      },
+      "infrastructure": {
+        "title": "Ingqalasizinda Nezindlu",
+        "description": "Ukuthuthukisa ingqalasizinda yomphakathi, amaphrojekthi ezindlu, nezikhungo zomphakathi ukuthuthukisa izimo zokuphila nokudala izindawo eziqhubekayo."
+      },
+      "sports": {
+        "title": "Ezemidlalo Namasiko",
+        "description": "Ukugubha ifa lethu ngemicimbi yamasiko, izinhlelo zokuthuthukiswa kwezemidlalo, nezinhlelo zokubandakanya intsha ezigcina ubunikazi bethu."
+      }
+    },
+    "documentTypes": {
+      "applicationForms": "Amafomu Okufaka Isicelo",
+      "programmeInfo": "Ulwazi Lwezinhlelo Nezinqubomgomo"
+    },
+    "badges": {
+      "application": "Isicelo"
+    },
+    "actions": {
+      "apply": "Faka Isicelo",
+      "view": "Buka"
+    },
+    "loading": "Iyalayisha amadokhumenti...",
+    "error": "Kuhlulekile ukulayisha amadokhumenti alolu hlelo.",
+    "emptyState": "Azikho izicelo ezivulekile manje ku-{{section}}.",
+    "emptyStateSubtext": "Sicela ubuye uhlole kamuva ukuze uthole izibuyekezo."
   }
 }
