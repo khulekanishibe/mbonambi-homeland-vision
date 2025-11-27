@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useTranslation } from 'react-i18next';
 
 export type ProgrammeTheme = 
   | "EDUCATION"
@@ -74,45 +75,45 @@ interface ProgrammeSection {
   color: string;
 }
 
-const programmeSections: ProgrammeSection[] = [
+const getProgrammeSections = (t: any): ProgrammeSection[] => [
   {
     id: "EDUCATION",
-    title: "Education & Skills Development",
+    title: t('programmes.sections.education.title'),
     icon: GraduationCap,
-    description: "Supporting our youth with tertiary education bursaries, vocational training, and skills development programmes to build a knowledgeable community.",
+    description: t('programmes.sections.education.description'),
     color: "text-blue-600 dark:text-blue-400"
   },
   {
     id: "AGRICULTURE",
-    title: "Enterprise & Agriculture",
+    title: t('programmes.sections.agriculture.title'),
     icon: Sprout,
-    description: "Empowering local farmers and entrepreneurs with agricultural support, farming inputs, and SMME development initiatives to foster economic growth.",
+    description: t('programmes.sections.agriculture.description'),
     color: "text-green-600 dark:text-green-400"
   },
   {
     id: "SOCIAL_WELFARE",
-    title: "Community Welfare",
+    title: t('programmes.sections.welfare.title'),
     icon: Heart,
-    description: "Providing social support programmes, food security initiatives, and community care services to ensure the wellbeing of all Mbonambi residents.",
+    description: t('programmes.sections.welfare.description'),
     color: "text-rose-600 dark:text-rose-400"
   },
   {
     id: "INFRASTRUCTURE",
-    title: "Infrastructure & Housing",
+    title: t('programmes.sections.infrastructure.title'),
     icon: Home,
-    description: "Developing community infrastructure, housing projects, and public facilities to improve living conditions and create sustainable environments.",
+    description: t('programmes.sections.infrastructure.description'),
     color: "text-orange-600 dark:text-orange-400"
   },
   {
     id: "SPORTS_CULTURE",
-    title: "Sports & Cultural Heritage",
+    title: t('programmes.sections.sports.title'),
     icon: Trophy,
-    description: "Celebrating our heritage through cultural events, sports development programmes, and youth engagement initiatives that preserve our identity.",
+    description: t('programmes.sections.sports.description'),
     color: "text-purple-600 dark:text-purple-400"
   }
 ];
 
-const DocumentItem = ({ document }: { document: ProgrammeDocument }) => {
+const DocumentItem = ({ document, t }: { document: ProgrammeDocument; t: any }) => {
   const isApplicationForm = document.category === "APPLICATION_FORM";
   
   return (
@@ -130,7 +131,7 @@ const DocumentItem = ({ document }: { document: ProgrammeDocument }) => {
             <p className="font-medium text-sm line-clamp-1">{document.title}</p>
             {isApplicationForm && (
               <Badge variant="default" className="text-xs shrink-0">
-                Application
+                {t('programmes.badges.application')}
               </Badge>
             )}
           </div>
@@ -149,13 +150,13 @@ const DocumentItem = ({ document }: { document: ProgrammeDocument }) => {
         className="shrink-0"
       >
         <ExternalLink className="h-3.5 w-3.5" />
-        {isApplicationForm ? "Apply" : "View"}
+        {isApplicationForm ? t('programmes.actions.apply') : t('programmes.actions.view')}
       </Button>
     </div>
   );
 };
 
-const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
+const ProgrammeSection = ({ section, t }: { section: ProgrammeSection; t: any }) => {
   const { data: documents, isLoading, error } = useQuery({
     queryKey: ['programme-documents', section.id],
     queryFn: () => fetchDocuments(undefined, section.id),
@@ -185,7 +186,7 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
           <div className="flex items-center justify-center py-8">
             <div className="flex flex-col items-center gap-2">
               <div className="h-6 w-6 animate-spin rounded-full border-3 border-primary border-t-transparent" />
-              <p className="text-sm text-muted-foreground">Loading documents...</p>
+              <p className="text-sm text-muted-foreground">{t('programmes.loading')}</p>
             </div>
           </div>
         )}
@@ -193,7 +194,7 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
         {error && (
           <div className="flex items-center gap-2 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
             <AlertCircle className="h-4 w-4 text-destructive" />
-            <p className="text-sm text-destructive">Failed to load documents for this programme.</p>
+            <p className="text-sm text-destructive">{t('programmes.error')}</p>
           </div>
         )}
 
@@ -201,10 +202,10 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
           <div className="text-center py-8">
             <FileText className="h-10 w-10 text-muted-foreground/50 mx-auto mb-3" />
             <p className="text-sm text-muted-foreground">
-              No current open applications for {section.title}.
+              {t('programmes.emptyState', { section: section.title })}
             </p>
             <p className="text-xs text-muted-foreground mt-1">
-              Please check back later for updates.
+              {t('programmes.emptyStateSubtext')}
             </p>
           </div>
         )}
@@ -215,10 +216,10 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
               <div>
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                   <Download className="h-4 w-4 text-primary" />
-                  Application Forms
+                  {t('programmes.documentTypes.applicationForms')}
                 </h4>
                 <div className="space-y-2">
-                  {forms.map(doc => <DocumentItem key={doc.id} document={doc} />)}
+                  {forms.map(doc => <DocumentItem key={doc.id} document={doc} t={t} />)}
                 </div>
               </div>
             )}
@@ -227,10 +228,10 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
               <div>
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
                   <Book className="h-4 w-4 text-muted-foreground" />
-                  Programme Information & Policies
+                  {t('programmes.documentTypes.programmeInfo')}
                 </h4>
                 <div className="space-y-2">
-                  {policies.map(doc => <DocumentItem key={doc.id} document={doc} />)}
+                  {policies.map(doc => <DocumentItem key={doc.id} document={doc} t={t} />)}
                 </div>
               </div>
             )}
@@ -242,6 +243,9 @@ const ProgrammeSection = ({ section }: { section: ProgrammeSection }) => {
 };
 
 const Programmes = () => {
+  const { t } = useTranslation();
+  const programmeSections = getProgrammeSections(t);
+  
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
@@ -252,10 +256,10 @@ const Programmes = () => {
           <div className="container mx-auto px-4 py-12 md:py-16">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Community Development Programmes
+                {t('programmes.title')}
               </h1>
               <p className="text-lg text-muted-foreground">
-                Empowering the Mbonambi community through education, enterprise, and welfare support
+                {t('programmes.subtitle')}
               </p>
             </div>
           </div>
@@ -285,7 +289,7 @@ const Programmes = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-5xl mx-auto space-y-8">
             {programmeSections.map(section => (
-              <ProgrammeSection key={section.id} section={section} />
+              <ProgrammeSection key={section.id} section={section} t={t} />
             ))}
           </div>
         </div>
