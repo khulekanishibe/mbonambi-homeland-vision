@@ -1,11 +1,8 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Heart, Users, Crown } from 'lucide-react';
 import TiltedCard from './TiltedCard'; // Import TiltedCard
 
 const TrustOverviewCards = () => {
-  const { t } = useTranslation();
 
   const trusts = [
     {
@@ -18,8 +15,8 @@ const TrustOverviewCards = () => {
         'R2M furniture workshop (Furniture & Upholstery Initiative)'
       ],
       icon: Heart,
-      color: 'bg-forest-100 hover:bg-forest-200',
-      iconColor: 'text-forest-600',
+      color: 'bg-mbonambi-lightGray hover:bg-mbonambi-lightGray/80',
+      iconColor: 'text-mbonambi-mauve',
       link: '/trust'
     },
     {
@@ -31,8 +28,8 @@ const TrustOverviewCards = () => {
         'Strategic partnership management'
       ],
       icon: Users,
-      color: 'bg-navy-100 hover:bg-navy-200',
-      iconColor: 'text-navy-600',
+      color: 'bg-mbonambi-lightGray hover:bg-mbonambi-lightGray/80',
+      iconColor: 'text-mbonambi-mauve',
       link: '/trust'
     },
     {
@@ -44,20 +41,20 @@ const TrustOverviewCards = () => {
         'Provides strategic oversight and focus'
       ],
       icon: Crown,
-      color: 'bg-sandstone-100 hover:bg-sandstone-200',
-      iconColor: 'text-sandstone-600',
+      color: 'bg-mbonambi-lightGray hover:bg-mbonambi-lightGray/80',
+      iconColor: 'text-mbonambi-mauve',
       link: '/trust'
     }
   ];
 
   return (
-    <section id="trusts" className="py-20 bg-sandstone-50">
+    <section id="trusts" className="py-20 bg-mbonambi-lightGray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-navy-800 mb-6">
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-mbonambi-darkGray mb-6">
             Our Community Trusts
           </h2>
-          <p className="text-lg text-navy-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-mbonambi-mediumGray max-w-3xl mx-auto leading-relaxed">
             Three interconnected trusts working together to manage our community's development, resources, and strategic partnerships for sustainable prosperity.
           </p>
         </div>
@@ -68,6 +65,7 @@ const TrustOverviewCards = () => {
             return (
               <TiltedCard
                 key={index}
+                imageSrc="" // Empty image source since we're using overlay content
                 containerHeight="200px" // Smaller height
                 containerWidth="200px" // Smaller width
                 scale={0.95} // Initial scale (slightly zoomed out)
@@ -85,14 +83,14 @@ const TrustOverviewCards = () => {
                       </div>
                     </div>
                     
-                    <h3 className="font-bold text-navy-800 mb-4 text-xl text-center">
+                    <h3 className="font-bold text-mbonambi-darkGray mb-4 text-xl text-center">
                       {trust.name}
                     </h3>
                     
                     <div className="mt-6 text-center">
                       <Link 
                         to={trust.link}
-                        className="inline-flex items-center bg-navy-700 hover:bg-navy-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                        className="inline-flex items-center bg-mbonambi-mauve hover:bg-mbonambi-mauve/80 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
                       >
                         Learn More →
                       </Link>

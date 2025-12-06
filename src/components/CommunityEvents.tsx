@@ -1,9 +1,6 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Calendar } from 'lucide-react';
 
 const CommunityEvents = () => {
-  const { t } = useTranslation();
 
   return (
     <section id="events" className="py-20 bg-white">

@@ -1,5 +1,4 @@
-import React from 'react';
-import Navigation from '../components/Navigation';
+import MegaMenu from '../components/MegaMenu';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ClanHistoryTimeline from '../components/ClanHistoryTimeline';
@@ -12,8 +11,8 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <div className="min-h-screen bg-theme vignette">
+      <MegaMenu />
       
       {/* 1. Hero Section */}
       <HeroSection />

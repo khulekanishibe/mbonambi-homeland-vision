@@ -138,36 +138,34 @@ const menuItems: MenuItem[] = [
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a"> & { items?: SubMenuItem[] }
->(({ className, title, children, items, ...props }, ref) => {
-  const [isHovered, setIsHovered] = useState(false);
-
+>(({ className, title, items, ...props }, ref) => {
   return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div>
       <NavigationMenuLink asChild>
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-black/20 focus:bg-black/20 text-white",
+            "block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-black/20 focus:bg-black/20 text-white",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-sandstone-200/80">
-            {children}
-          </p>
         </a>
       </NavigationMenuLink>
-      {items && isHovered && (
+      {items && (
         <div className="pl-4 pt-2">
-          <ul className="grid gap-3">
+          <ul className="grid gap-1">
             {items.map((item) => (
-              <ListItem key={item.title} title={item.title} href={item.href}>
-                {item.description}
-              </ListItem>
+              <li key={item.title}>
+                <NavigationMenuLink asChild>
+                  <a href={item.href} className={cn(
+                    "block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-black/20 focus:bg-black/20 text-white/80",
+                  )}>
+                    <div className="text-sm font-medium leading-none">{item.title}</div>
+                  </a>
+                </NavigationMenuLink>
+              </li>
             ))}
           </ul>
         </div>
@@ -214,9 +212,7 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
           <NavigationMenuContent className="border-transparent bg-theme/70 backdrop-blur-md">
             <div className="grid w-[600px] grid-cols-2 gap-3 p-4">
               {item.items.map((subItem) => (
-                <ListItem key={subItem.title} title={subItem.title} href={subItem.href} items={subItem.items}>
-                  {subItem.description}
-                </ListItem>
+                <ListItem key={subItem.title} title={subItem.title} href={subItem.href} items={subItem.items} />
               ))}
             </div>
           </NavigationMenuContent>

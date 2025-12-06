@@ -1,8 +1,11 @@
 import base64
 import uuid
+import os
+import aioboto3
 from PIL import Image
 from io import BytesIO
 from typing import Optional
+from fastapi import UploadFile
 
 def validate_and_process_image(image_data: str, max_size: tuple = (800, 600)) -> Optional[str]:
     """
@@ -71,3 +74,51 @@ def truncate_text(text: str, length: int = 150) -> str:
     if len(text) <= length:
         return text
     return text[:length].rstrip() + "..."
+
+async def upload_file_to_s3(file: UploadFile, folder: str = "uploads") -> str:
+    """
+    Upload a file to AWS S3 and return the public URL
+    
+    Args:
+        file: The uploaded file
+        folder: The folder path in S3 (e.g., 'documents', 'tenders')
+    
+    Returns:
+        The public URL of the uploaded file
+    """
+    # Read file content
+    content = await file.read()
+    
+    # Generate unique filename
+    file_extension = os.path.splitext(file.filename)[1]
+    unique_filename = generate_unique_filename(file_extension)
+    s3_key = f"{folder}/{unique_filename}"
+    
+    # Get AWS credentials from environment
+    aws_access_key = os.getenv("AWS_ACCESS_KEY_ID")
+    aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+    s3_bucket = os.getenv("S3_BUCKET_NAME")
+    aws_region = os.getenv("AWS_REGION", "af-south-1")
+    
+    if not all([aws_access_key, aws_secret_key, s3_bucket]):
+        raise ValueError("AWS credentials not configured")
+    
+    # Upload to S3
+    session = aioboto3.Session(
+        aws_access_key_id=aws_access_key,
+        aws_secret_access_key=aws_secret_key,
+        region_name=aws_region
+    )
+    
+    async with session.client('s3') as s3_client:
+        await s3_client.put_object(
+            Bucket=s3_bucket,
+            Key=s3_key,
+            Body=content,
+            ContentType=file.content_type or 'application/octet-stream',
+            ACL='public-read'
+        )
+    
+    # Return public URL
+    s3_url = f"https://{s3_bucket}.s3.{aws_region}.amazonaws.com/{s3_key}"
+    return s3_url

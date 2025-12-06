@@ -7,10 +7,128 @@
   "contact": "Contact",
   "gallery": "Gallery",
   "events": "Events",
+  "tenders": "Tenders",
+  "programmes": "Programmes",
+  "transparency": "Transparency Portal",
+  "ourHeritage": "Our Heritage",
   "welcome": "Welcome to the Mbonambi Community",
+  "navigation": {
+    "tenders": "Tenders & Procurement",
+    "programmes": "Community Programmes",
+    "transparency": "Transparency Portal",
+    "ourHeritage": "Our Heritage",
+    "announcements": "Trust Announcements",
+    "aboutUs": "About Us",
+    "clanHistory": "Clan History",
+    "leadership": "Leadership",
+    "trustEcosystem": "Trust Ecosystem"
+  },
   "hero": {
     "title": "Mbonambi Community",
     "subtitle": "Guardians of Our Land, Partners in Progress",
     "description": "From the legendary forges of our ancestors to the modern halls of progress, the Mbonambi people continue their legacy of craftsmanship, unity, and resilience."
+  },
+  "transparency": {
+    "title": "Radical Transparency Portal",
+    "subtitle": "Open access to the Mbonambi Trust's financial and governance records. We believe in complete transparency with our community.",
+    "tabs": {
+      "all": "All Documents",
+      "financials": "Financials",
+      "governance": "Governance",
+      "meetings": "Meetings"
+    },
+    "categories": {
+      "financial_statement": "Financial Statement",
+      "annual_report": "Annual Report",
+      "quarterly_report": "Quarterly Report",
+      "governance_policy": "Governance Policy",
+      "meeting_minutes": "Meeting Minutes",
+      "other": "Other"
+    },
+    "actions": {
+      "download": "Download"
+    },
+    "loading": "Loading documents...",
+    "error": "Failed to load documents. Please ensure the backend server is running.",
+    "emptyState": "No documents found in this category.",
+    "showingCount": "Showing {{count}} document",
+    "showingCount_plural": "Showing {{count}} documents"
+  },
+  "tenders": {
+    "title": "Procurement & Tenders",
+    "subtitle": "Current business opportunities and contract awards from the Mbonambi Community Trust",
+    "tabs": {
+      "open": "Open",
+      "closed": "Closed",
+      "awarded": "Awarded"
+    },
+    "status": {
+      "open": "Open",
+      "closed": "Closed",
+      "awarded": "Awarded"
+    },
+    "labels": {
+      "opens": "Opens",
+      "closes": "Closes",
+      "closingSoon": "Closing Soon",
+      "contractAwarded": "Contract Awarded",
+      "value": "Value"
+    },
+    "actions": {
+      "downloadSpecs": "Download Specifications",
+      "submissionsClosed": "Submissions Closed"
+    },
+    "loading": "Loading tenders...",
+    "error": {
+      "title": "Unable to Load Tenders",
+      "message": "There was an error connecting to the server. Please ensure the backend is running."
+    },
+    "emptyState": {
+      "title": "No Tenders Available",
+      "open": "There are currently no open tender opportunities. Please check back later.",
+      "closed": "There are no recently closed tenders.",
+      "awarded": "No tender awards have been published yet."
+    }
+  },
+  "programmes": {
+    "title": "Community Development Programmes",
+    "subtitle": "Empowering the Mbonambi community through education, enterprise, and welfare support",
+    "sections": {
+      "education": {
+        "title": "Education & Skills Development",
+        "description": "Supporting our youth with tertiary education bursaries, vocational training, and skills development programmes to build a knowledgeable community."
+      },
+      "agriculture": {
+        "title": "Enterprise & Agriculture",
+        "description": "Empowering local farmers and entrepreneurs with agricultural support, farming inputs, and SMME development initiatives to foster economic growth."
+      },
+      "welfare": {
+        "title": "Community Welfare",
+        "description": "Providing social support programmes, food security initiatives, and community care services to ensure the wellbeing of all Mbonambi residents."
+      },
+      "infrastructure": {
+        "title": "Infrastructure & Housing",
+        "description": "Developing community infrastructure, housing projects, and public facilities to improve living conditions and create sustainable environments."
+      },
+      "sports": {
+        "title": "Sports & Cultural Heritage",
+        "description": "Celebrating our heritage through cultural events, sports development programmes, and youth engagement initiatives that preserve our identity."
+      }
+    },
+    "documentTypes": {
+      "applicationForms": "Application Forms",
+      "programmeInfo": "Programme Information & Policies"
+    },
+    "badges": {
+      "application": "Application"
+    },
+    "actions": {
+      "apply": "Apply",
+      "view": "View"
+    },
+    "loading": "Loading documents...",
+    "error": "Failed to load documents for this programme.",
+    "emptyState": "No current open applications for {{section}}.",
+    "emptyStateSubtext": "Please check back later for updates."
   }
 }

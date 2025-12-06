@@ -63,6 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				mbonambi: {
+					darkGray: '#37353E',
+					mediumGray: '#44444E',
+					mauve: '#715A5A',
+					lightGray: '#D3DAD9',
+				},
 				navy: {
 					50: '#f0f4f8',
 					100: '#d9e2ec',
@@ -88,7 +94,7 @@ export default {
 					900: '#081a11',
 				},
 				theme: {
-					DEFAULT: 'rgb(10, 45, 1)',
+					DEFAULT: '#37353E',
 				},
 				sandstone: {
 					50: '#faf8f5',
@@ -102,7 +108,7 @@ export default {
 					800: '#5e4a2e',
 					900: '#40311a',
 				},
-				'rotating-text-bg': '#deb887',
+				'rotating-text-bg': '#715A5A',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

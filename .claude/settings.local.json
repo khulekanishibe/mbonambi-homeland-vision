@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.riotinto.com)",
+      "WebFetch(domain:www.transnet.net)",
+      "WebFetch(domain:www.nefcorp.co.za)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "byterover-mcp",
+    "github"
+  ]
+}

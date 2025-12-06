@@ -15,7 +15,9 @@ database = client.get_database()
 users_collection = database.users
 events_collection = database.events
 news_collection = database.news
-resources_collection = database.resources
+resources_collection = database.resources  # Legacy - kept for migration
+documents_collection = database.documents
+tenders_collection = database.tenders
 gallery_collection = database.gallery
 rsvps_collection = database.rsvps
 newsletter_collection = database.newsletter_subscribers
@@ -39,9 +41,20 @@ async def create_indexes():
     await news_collection.create_index("category")
     await news_collection.create_index("published")
     
-    # Resource indexes
+    # Resource indexes (legacy)
     await resources_collection.create_index("category")
     await resources_collection.create_index("created_at")
+    
+    # Document indexes
+    await documents_collection.create_index("category")
+    await documents_collection.create_index("programme_theme")
+    await documents_collection.create_index("created_at")
+    
+    # Tender indexes
+    await tenders_collection.create_index("reference_number", unique=True)
+    await tenders_collection.create_index("status")
+    await tenders_collection.create_index("closing_date")
+    await tenders_collection.create_index("created_at")
     
     # Gallery indexes
     await gallery_collection.create_index("created_at")

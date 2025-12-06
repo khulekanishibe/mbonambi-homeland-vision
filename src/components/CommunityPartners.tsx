@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Users, Handshake, Building } from 'lucide-react';
 
 const CommunityPartners = () => {
