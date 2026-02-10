@@ -28,24 +28,6 @@ const MegaMenu: React.FC<{ className?: string }> = ({ className }) => {
       icon: Home,
     },
     {
-      id: 'tenders',
-      label: t('navigation.tenders', 'Tenders & Procurement'),
-      href: '/tenders',
-      icon: Briefcase,
-    },
-    {
-      id: 'programmes',
-      label: t('navigation.programmes', 'Community Programmes'),
-      href: '/programmes',
-      icon: Heart,
-    },
-    {
-      id: 'transparency',
-      label: t('navigation.transparency', 'Transparency Portal'),
-      href: '/transparency',
-      icon: FileText,
-    },
-    {
       id: 'heritage',
       label: t('navigation.ourHeritage', 'Our Heritage'),
       icon: Crown,
@@ -81,6 +63,24 @@ const MegaMenu: React.FC<{ className?: string }> = ({ className }) => {
           description: 'Visual stories from our community'
         },
       ]
+    },
+    {
+      id: 'tenders',
+      label: t('navigation.tenders', 'Tenders & Procurement'),
+      href: '/tenders',
+      icon: Briefcase,
+    },
+    {
+      id: 'programmes',
+      label: t('navigation.programmes', 'Community Programmes'),
+      href: '/programmes',
+      icon: Heart,
+    },
+    {
+      id: 'transparency',
+      label: t('navigation.transparency', 'Transparency Portal'),
+      href: '/transparency',
+      icon: FileText,
     },
     {
       id: 'announcements',
