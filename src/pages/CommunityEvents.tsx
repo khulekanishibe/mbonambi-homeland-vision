@@ -1,4 +1,4 @@
-import Navigation from '../components/Navigation';
+import MegaMenu from '../components/MegaMenu';
 import Footer from '../components/Footer';
 import EventsCalendar from '../components/EventsCalendar';
 import UpcomingEvents from '../components/UpcomingEvents';
@@ -6,7 +6,7 @@ import UpcomingEvents from '../components/UpcomingEvents';
 const CommunityEvents = () => {
   return (
     <div className="min-h-screen bg-sandstone-50">
-      <Navigation />
+      <MegaMenu />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-navy-900 via-navy-800 to-forest-900">

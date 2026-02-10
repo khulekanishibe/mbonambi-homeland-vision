@@ -15,7 +15,7 @@ import {
   ExternalLink,
   AlertCircle
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
 import { useTranslation } from 'react-i18next';
 
@@ -248,7 +248,7 @@ const Programmes = () => {
   
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <MegaMenu />
       
       <main className="flex-grow">
         {/* Header */}

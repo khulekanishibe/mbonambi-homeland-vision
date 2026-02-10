@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FileText, Download, Calendar, Building2, Award, Clock } from "lucide-react";
 import { format, parseISO, differenceInHours } from "date-fns";
-import Navigation from "@/components/Navigation";
+import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
 import { useTranslation } from 'react-i18next';
 
@@ -208,7 +208,7 @@ const Tenders = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <MegaMenu />
       
       <main className="flex-grow container mx-auto px-4 py-8 md:py-12">
         {/* Header */}
